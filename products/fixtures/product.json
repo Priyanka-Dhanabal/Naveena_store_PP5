@@ -1,0 +1,226 @@
+[
+    {
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+        "sku": "rb001",
+        "name": "Bubble Gum",
+        "description": "Bubble Gum flavoured Scented candle",
+        "price": 5.99,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "/media/BubbleGum.png",
+        "image": "BubbleGum.png"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.product",
+      "fields": {
+        "sku": "rb002",
+        "name": "Chocolate",
+        "description": "Chocolate flavoured Scented candle",
+        "price": 5.99,
+        "category": 1,
+        "rating": 4.2,
+        "image_url": "/media/Chocolate.png",
+        "image": "Chocolate.jpg"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "rb003",
+        "name": "Cinnamon",
+        "description": "Cinnamon flavoured Scented candle.",
+        "price": 5.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "/media/Cinnamon.jpg",
+        "image": "Cinnamon.jpg"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "sku": "rb005",
+        "name": "Coconut",
+        "description": "Coconut flavoured Scented candle.",
+        "price": 5.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "/media/coconut.png",
+        "image": "coconut.png"
+      }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Garden",
+          "description": "garden flavoured Scented candle.",
+          "price": 7.99,
+          "category": 4,
+          "rating": 4.6,
+          "image_url": "/media/garden.png",
+          "image": "garden.png"
+        }
+      },
+      {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Jasmin",
+          "description": "jasmin flavoured Scented candle.",
+          "price": 5.99,
+          "category": 1,
+          "rating": 4.5,
+          "image_url": "/media/jasmin.png",
+          "image": "jasmin.png"
+        }
+      },
+      {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Lavender",
+          "description": "lavender flavoured Scented candle.",
+          "price": 5.99,
+          "category": 1,
+          "rating": 4.9,
+          "image_url": "/media/lavender.png",
+          "image": "lavender.png"
+        }
+      },
+      {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Lemon",
+          "description": "lemon flavoured Scented candle.",
+          "price": 5.99,
+          "category": 1,
+          "rating": 4.0,
+          "image_url": "/media/lemon.png",
+          "image": "lemon.png"
+        }
+      },
+      {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Lily",
+          "description": "lily flavoured Scented candle.",
+          "price": 5.99,
+          "category": 1,
+          "rating": 4.3,
+          "image_url": "/media/lily.png",
+          "image": "lily.png"
+        }
+      },
+      {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Ocean",
+          "description": "ocean flavoured Scented candle.",
+          "price": 7.99,
+          "category": 4,
+          "rating": 4.6,
+          "image_url": "/media/ocean.png",
+          "image": "ocean.png"
+        }
+      },
+      {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Pumpkin & Spice",
+          "description": "Pumpkin & Spice flavoured Scented candle.",
+          "price": 7.99,
+          "category": 4,
+          "rating": 4.7,
+          "image_url": "/media/pumkinSpice.png",
+          "image": "pumkinSpice.png"
+        }
+      },
+      {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Rose",
+          "description": "rose flavoured Scented candle.",
+          "price": 5.99,
+          "category": 1,
+          "rating": 4.0,
+          "image_url": "/media/rose.png",
+          "image": "rose.png"
+        }
+      },
+      {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Sandal",
+          "description": "sandal flavoured Scented candle.",
+          "price": 5.99,
+          "category": 1,
+          "rating": 4.8,
+          "image_url": "/media/sandal.png",
+          "image": "sandal.png"
+        }
+      },
+      {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Ocean Reed Diffuser",
+          "description": "ocean flavoured Reed Diffuser.",
+          "price": 5.99,
+          "category": 2,
+          "rating": 4.8,
+          "image_url": "/media/ocean_diff.png",
+          "image": "ocean_diff.png"
+        }
+      },
+      {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Orange Reed Diffuser",
+          "description": "Orange flavoured Reed Diffuser.",
+          "price": 5.99,
+          "category": 2,
+          "rating": 4.2,
+          "image_url": "/media/orange_diff.png",
+          "image": "orange_diff.png"
+        }
+      },
+      {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+          "sku": "rb005",
+          "name": "Rose Reed Diffuser",
+          "description": "Rose flavoured Reed Diffuser.",
+          "price": 5.99,
+          "category": 2,
+          "rating": 4.5,
+          "image_url": "/media/rose_diff.png",
+          "image": "rose_diff.png"
+        }
+      }
+]
