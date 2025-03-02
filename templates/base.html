@@ -16,6 +16,8 @@
     <!-- Bootstrap CSS -->
     {% block corecss %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -38,7 +40,6 @@
     <title>Naveena's Store {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top">
       <header class="container-fluid fixed-top">
         <div class="row">
           <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -102,7 +103,6 @@
           </div>
         </div>
     </header>
-
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
@@ -116,6 +116,5 @@
     {% block postloadjs %}
     {% endblock %}
 
-    
   </body>
 </html>
