@@ -45,7 +45,7 @@
       "pk": 4,
       "model": "products.product",
       "fields": {
-        "sku": "rb005",
+        "sku": "rb004",
         "name": "Coconut",
         "description": "Coconut flavoured Scented candle.",
         "price": 5.99,
@@ -73,7 +73,7 @@
         "pk": 6,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb006",
           "name": "Jasmin",
           "description": "jasmin flavoured Scented candle.",
           "price": 5.99,
@@ -87,7 +87,7 @@
         "pk": 7,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb007",
           "name": "Lavender",
           "description": "lavender flavoured Scented candle.",
           "price": 5.99,
@@ -101,7 +101,7 @@
         "pk": 8,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb008",
           "name": "Lemon",
           "description": "lemon flavoured Scented candle.",
           "price": 5.99,
@@ -115,7 +115,7 @@
         "pk": 9,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb009",
           "name": "Lily",
           "description": "lily flavoured Scented candle.",
           "price": 5.99,
@@ -129,7 +129,7 @@
         "pk": 10,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb010",
           "name": "Ocean",
           "description": "ocean flavoured Scented candle.",
           "price": 7.99,
@@ -143,7 +143,7 @@
         "pk": 11,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb011",
           "name": "Pumpkin & Spice",
           "description": "Pumpkin & Spice flavoured Scented candle.",
           "price": 7.99,
@@ -157,7 +157,7 @@
         "pk": 12,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb012",
           "name": "Rose",
           "description": "rose flavoured Scented candle.",
           "price": 5.99,
@@ -171,7 +171,7 @@
         "pk": 13,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb013",
           "name": "Sandal",
           "description": "sandal flavoured Scented candle.",
           "price": 5.99,
@@ -185,7 +185,7 @@
         "pk": 14,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb014",
           "name": "Ocean Reed Diffuser",
           "description": "ocean flavoured Reed Diffuser.",
           "price": 5.99,
@@ -199,7 +199,7 @@
         "pk": 15,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb015",
           "name": "Orange Reed Diffuser",
           "description": "Orange flavoured Reed Diffuser.",
           "price": 5.99,
@@ -213,7 +213,7 @@
         "pk": 16,
         "model": "products.product",
         "fields": {
-          "sku": "rb005",
+          "sku": "rb016",
           "name": "Rose Reed Diffuser",
           "description": "Rose flavoured Reed Diffuser.",
           "price": 5.99,
