@@ -88,6 +88,11 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+.btt-link {
+    cursor: pointer;
+}
+
+
 
 /* -------------------------------- Media Queries */
 
