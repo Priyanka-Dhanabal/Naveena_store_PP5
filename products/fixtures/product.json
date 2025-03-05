@@ -63,7 +63,7 @@
           "name": "Garden",
           "description": "garden flavoured Scented candle.",
           "price": 7.99,
-          "category": 4,
+          "category": 3,
           "rating": 4.6,
           "image_url": "/media/garden.png",
           "image": "garden.png"
@@ -133,7 +133,7 @@
           "name": "Ocean",
           "description": "ocean flavoured Scented candle.",
           "price": 7.99,
-          "category": 4,
+          "category": 3,
           "rating": 4.6,
           "image_url": "/media/ocean.png",
           "image": "ocean.png"
@@ -147,7 +147,7 @@
           "name": "Pumpkin & Spice",
           "description": "Pumpkin & Spice flavoured Scented candle.",
           "price": 7.99,
-          "category": 4,
+          "category": 3,
           "rating": 4.7,
           "image_url": "/media/pumkinSpice.png",
           "image": "pumkinSpice.png"
