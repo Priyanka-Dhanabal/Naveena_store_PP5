@@ -1,0 +1,1 @@
+web: gunicorn naveena_store.wsgi:application
