@@ -44,7 +44,7 @@
     <title>Naveena's Store {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-      <header class="container-fluid fixed-top">
+    <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
           <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
             <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -122,6 +122,7 @@
           </div>
         </div>
     </header>
+    <main>
     {% if messages %}
         <div class="message-container">
           {% for message in messages %}
@@ -151,6 +152,54 @@
         $('.toast').toast('show');
       </script>
     {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4 my-5">
+      <div class="container">
+          <div class="row">
+              <!-- Information Section -->
+              <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  <h5 class="text-decoration-underline"><strong>Information</strong></h5>
+                  <ul class="list-unstyled">
+                      <li><a href="" class="nav-link text-white">About Us</a></li>
+                      <li><a href="" class="nav-link text-white">Contact Us</a></li>
+                      <li><a href="" class="nav-link text-white">Privacy Policy</a></li>
+                  </ul>
+              </div>
+
+
+              <!-- Social Media Section -->
+              <div class="col-12 col-md-6 text-center mb-3 mb-md-0">
+                  <h5 class="text-decoration-underline"><strong>Follow Us</strong></h5>
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><a href="https://facebook.com" target="_blank" class="text-white"
+                              rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a></li>
+                      <li class="list-inline-item"><a href="https://twitter.com" target="_blank" class="text-white"
+                              rel="noopener noreferrer"><i class="fab fa-twitter fa-lg"></i></a></li>
+                      <li class="list-inline-item"><a href="https://instagram.com" target="_blank" class="text-white"
+                              rel="noopener noreferrer"><i class="fab fa-instagram fa-lg"></i></a></li>
+                      <li class="list-inline-item"><a href="https://linkedin.com" target="_blank" class="text-white"
+                              rel="noopener noreferrer"><i class="fab fa-linkedin fa-lg"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="row mt-3">
+          <div class="col text-center">
+              <p class="mb-0">&copy; <span id="current-year">2025</span> Naveena's Store . All rights reserved.</p>
+          </div>
+      </div>
+      
+      <script>
+          // Dynamically set the current year
+          document.getElementById('current-year').textContent = new Date().getFullYear();
+      </script>
+      
+  </footer>
+  
+
+
 
   </body>
 </html>
