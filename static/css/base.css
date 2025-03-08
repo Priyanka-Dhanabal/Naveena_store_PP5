@@ -3,7 +3,8 @@ html {
 }
 
 body {
-    background: url('/media/scented_candle.png') no-repeat center center fixed;
+    background: no-repeat center center fixed;
+    background-image: url('https://naveenastore.s3.amazonaws.com/media/scented_candle.png');
     background-size: cover;
     height: calc(100vh - 164px);
     color: rgb(82, 0, 0);
