@@ -28,11 +28,13 @@ def contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
+            print("Form is valid")
             # Save the form instance and retrieve cleaned data
             try:
                 contact_message = form.save(commit=False)
                 contact_message.save()
             except Exception as e:
+                print(f"Form errors: {form.errors}")
                 print(f"Error saving message: {e}")
                 messages.error(request, "There was an issue saving your message. Please try again later.")
                 return redirect(reverse("home"))
