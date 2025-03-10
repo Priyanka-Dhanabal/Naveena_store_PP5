@@ -17,7 +17,7 @@ def contact_view(request):
 
     # Meta description for the contact page
     meta_description = (
-        "Get in touch with Maison Lavaux. Reach out for inquiries, support, "
+        "Get in touch with Naveena's Store. Reach out for inquiries, support, "
         "or feedback. We aim to respond within two working days."
     )
 
