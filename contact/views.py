@@ -6,7 +6,6 @@ from .models import ContactMessage
 from .forms import ContactForm
 import os
 
-
 def contact_view(request):
     """
     Handles creation of contact submissions.
@@ -16,6 +15,7 @@ def contact_view(request):
     admin_email = os.environ.get("EMAIL_ADMIN_ADDRESS")
 
     if not admin_email:
+        print("Error: Admin email is not configured.")
         messages.error(request, "Admin email is not configured. Please try again later.")
         return redirect(reverse("home"))
 
@@ -34,8 +34,7 @@ def contact_view(request):
                 contact_message = form.save(commit=False)
                 contact_message.save()
             except Exception as e:
-                print(f"Form errors: {form.errors}")
-                print(f"Error saving message: {e}")
+                print(f"Error saving contact message: {e}")
                 messages.error(request, "There was an issue saving your message. Please try again later.")
                 return redirect(reverse("home"))
 
@@ -55,7 +54,7 @@ def contact_view(request):
                     fail_silently=False,
                 )
             except Exception as e:
-                print(f"Error sending email: {e}")
+                print(f"Error sending email to admin: {e}")
                 messages.error(request, "There was an issue sending the notification email. Please try again later.")
                 return redirect(reverse("home"))
 
@@ -70,7 +69,8 @@ def contact_view(request):
                 )
             except Exception as e:
                 print(f"Error sending confirmation email: {e}")
-                # Continue processing even if this fails, but you can add feedback if needed.
+                # Log the error but do not block the flow
+                messages.info(request, "Thank you for contacting us. We’ve received your message.")
 
             # Provide user feedback and redirect
             messages.success(
@@ -81,7 +81,7 @@ def contact_view(request):
             return redirect(reverse("home"))
         else:
             # Handle form errors
-            print(form.errors)  # For debugging purposes
+            print(f"Form errors: {form.errors}")  # For debugging purposes
             messages.error(request, "There were errors in your form submission. Please correct them and try again.")
             return render(request, "contact/contact.html", {"form": form, "meta_description": meta_description})
 
