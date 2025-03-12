@@ -318,3 +318,114 @@ USE_AWS | True
   I have setup the debug to be true if the DEVELOPMENT is found in the environment variables which will be true for localhost.
 
   - 6. on Heroku under deploy for your app click Deploy Branch to deploy your app
+
+
+### Amazon AWS S3
+
+This project uses Amazon Web Servies (AWS https://aws.amazon.com/) to store static and media files.
+
+Once youve created an AWS account and logged in. You can follow the following steps to setup your static and media files storage.
+
+From the AWS Management Console.
+
+  - Search for S3
+  - Create a new bucket, give it a name matching your Heroku app name and choose a region closest to you
+  - Uncheck Block all public access and acknowledge that the bucket will be public.
+  - From Object ownership make sure ACLs are enabled and Bucket owner preferred is selected
+  - From the Permisssions tab paste in the following CORS configuration
+
+  ```
+    [
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+  ```
+
+  - Copy your ARN string
+  - From the Bucket Policy tab, select the Policy Generator link and set
+    - Policy type: S3 Bucket Policy
+    - Effect: Allow
+    - Principal *
+    - Actions: GetObject()
+    - Amazon Resource Name (ARN): paste your ARN here
+    - Click add Statement
+    - Click Generate Policy
+    - Copy entire Policy and paste it into the Bucket Policy editor
+
+    ```
+    {
+    "Version": "2012-10-17",
+    "Id": "Policy1726973504037",
+    "Statement": [
+        {
+            "Sid": "Stmt1726973489892",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket name/*"
+        }
+    ]
+    }
+    ```
+    
+    - Click save
+    - From the Access Control List (ACL) section click edit and enable List for Everyone (public access) and accept the warning box.
+
+### IAM
+  Back on the AWS service menu, search for IAM (Identity and access management). Once on the IAM page
+
+  - From User Groups click Create New Group
+  - From User Groups, select newly created group and go to the permissions tab
+  - Open the Add Permissions dropdown and click on Attach Policies
+  - select the policy then click on Add Permissions at the bottom
+  - From the JSON tab select Import Managed Policy link
+    - Search for S3 select AmazonS3FullAccess policy and import
+    
+    ```
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket name",
+                "arn:aws:s3:::bucket name/*"
+            ]
+        }
+    ]
+    }
+    ```
+
+    - Click Review Policy
+    - Provide a description a brief overview of what it for
+    - Click Create Policy 
+
+  - From User Groups click on group created
+  - Click Attach Policy
+  - Search for ther policy youve just created select it and click on Attach Policy
+  - From User Groups click Add User
+  - From Select AWS access type select Programmatic Access
+  - Select the group to add to your user (created above)
+  - Click Create User
+  - under the User Summary on the right click on Create Access Key
+    - set AWS_ACCESS_KEY_ID = Access Key ID
+    - AWS_SECRET_ACCESS_KEY = Secret Access Key
+  
+### Final Setup
+  - Back within S3 buckets create folder media
+  - copy over existing media files to this folder
+  - Under Manage Public Permisssions select Grant public read access to this object
