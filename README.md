@@ -223,3 +223,68 @@ sqlparse | 0.5.3
 stripe | 11.6.0
 
 [Goto Top](#Table of contents)
+
+## Deployment
+  This project was developed using GitPod. The web application is deployed on Heroku. All Static and media files are stored via Amazon AWS S3. The repository is hosted on GitHub.
+
+[Goto Top](#Table of contents)
+
+### Clone GitHub Repository
+
+  By Cloning a GitHub repository you can create a local copy of a GitHub remote repository.
+  Cloning is done via the following steps
+
+  - 1. Login to GitHub
+  - 2. Navigate to the main GitHub repository that you want to clone
+  - 3. Click on the green dropdown button Code
+  - 4. To clone the repository using HTTPS under HTTPS copy the link
+  - 5. Open command prompt
+  - 6. Change to the directory you want to create the repository in
+  - 7. Type git clone and paste the URL you copied in step 4.
+    ``` $ git clone https://github.com/your-username/your-repository```
+  - 8. Press enter. Your local copy of the repository will be created
+
+For this project GitPod IDE was used so I just had to create a workspace and connect to GitHub by choosing the repository.
+Once the workspace opened in GitPod 
+
+To install the dependencies from the command line in GitPod
+pip3 install -r requirements.txt
+
+
+## Deployment
+  This project was developed using GitPod. The web application is deployed on Heroku. All Static and media files are stored via Amazon AWS S3. The repository is hosted on GitHub.
+
+[Goto Top](#Table of contents)
+
+### Clone GitHub Repository
+
+  By Cloning a GitHub repository you can create a local copy of a GitHub remote repository.
+  Cloning is done via the following steps
+
+  - 1. Login to GitHub
+  - 2. Navigate to the main GitHub repository that you want to clone
+  - 3. Click on the green dropdown button Code
+  - 4. To clone the repository using HTTPS under HTTPS copy the link
+  - 5. Open command prompt
+  - 6. Change to the directory you want to create the repository in
+  - 7. Type git clone and paste the URL you copied in step 4.
+    ``` $ git clone https://github.com/your-username/your-repository```
+  - 8. Press enter. Your local copy of the repository will be created
+
+For this project GitPod IDE was used so I just had to create a workspace and connect to GitHub by choosing the repository.
+Once the workspace opened in GitPod 
+
+To install the dependencies from the command line in GitPod
+pip3 install -r requirements.txt
+
+Make migrations and setup initial database operations
+on the CLI in GitPod enter python3 manage.py makemigrations
+then
+python3 manage.py migrate
+
+To setup the categories and products copy over the media file and run
+python3 manage.py loaddata categories
+python3 manage.py loaddata products
+
+Then I created a superuser by entering
+python3 manage.py createsupreruser
