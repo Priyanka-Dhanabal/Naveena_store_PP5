@@ -288,3 +288,33 @@ python3 manage.py loaddata products
 
 Then I created a superuser by entering
 python3 manage.py createsupreruser
+
+### Deployment on Heroku
+
+This project uses Heroku for production and static and media files are stored via a bucket on Amazon AWS S3. To deploy on Heroku
+
+  - 1. Naviage to heroku.com and login and create new app for your project and set the region and click on create app.
+  - 2. Connect Heroku app to github repository 
+  - 3. Configure variables on Heroku by navigating to settings and click on Revela Config Vars 
+
+Variable | Key
+--- | ---
+AWS_ACCESS_KEY_ID | Access key for AWS 
+AWS_SECRET_ACCESS_KEY | secret key for AWS 
+DATABASE_URL | database url got from code institute 
+EMAIL_HOST_PASS | password for email sender 
+EMAIL_HOST_USER | email address used 
+PORT | 8000 
+SECRET_KEY | Django secrey key 
+STRIPE_PUBLIC_KEY | stripe public key 
+STRIPE_SECRET_KEY | stripe secret key 
+STRIPE_WH_SECRET | stripe webhook secret key 
+USE_AWS | True 
+
+  - 4. Then create a Procfile with contents - web: gunicorn naveena_store.wsgi:application
+
+  - 5. add hostname of heroku app to allowed hosts in settings.py
+
+  I have setup the debug to be true if the DEVELOPMENT is found in the environment variables which will be true for localhost.
+
+  - 6. on Heroku under deploy for your app click Deploy Branch to deploy your app
