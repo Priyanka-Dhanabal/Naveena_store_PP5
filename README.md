@@ -188,3 +188,18 @@ Typography:
 - Imported Lato from Google fonts user as the primary font, and Sans-Serif used as the secondary font.
 
 [Goto Top](#Table of contents)
+
+## Technologies Used
+  - HTML
+  - Python
+  - CSS
+  - JavaScript
+  - Django used as the Python framework for the site
+  - AWS S3 used for online static and media file storage
+  - PostgresSQL used as the relational database management
+  - Heroku used for hosting the site
+  - GitHub for storing repository of development
+  - GitPod used for cloud IDE
+  - Balsamiq used for wireframing
+  - Bootstrap 4 used for frontend framework
+  - favicon.io used to make favicon for the site
