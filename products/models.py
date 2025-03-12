@@ -1,6 +1,7 @@
 from django.db import models
-
-from django.db import models
+from django.core.exceptions import ValidationError
+from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -31,3 +32,25 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    product = models.ForeignKey(
+        Product, related_name="reviews", on_delete=models.CASCADE
+    )
+    user = models.ForeignKey(
+        User, related_name="reviews", on_delete=models.CASCADE
+    )
+    rating = models.PositiveIntegerField()
+    comment = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = [
+            "product",
+            "user",
+        ]  # Ensure one review per user per product
+
+    def __str__(self):
+        return f"Review by {self.user.username} for {self.product.name} ({self.rating}/5)"
