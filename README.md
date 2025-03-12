@@ -27,20 +27,33 @@ You can check out my Repository [here]()
 
 ### Admin
 
-- I can administer the site
-  - I can read Site Admin emails through Django Admin
-  - I can create, edit and delete (CRUD) products
-  - I can write/edit/delete a review that any user posts
+- As an admin, I can assign products to specific categories so that users can find them more easily during browsing.
+- As an admin, I can upload, update, or delete product images so that products are visually appealing and well-represented.
+- As an admin, I can edit existing product details (e.g., name, price, description, stock) so that the catalogue stays accurate and up-to-date.
+- As an admin, I can add new products to the catalogue so that users can see and purchase the latest items available.
+- As an admin, I can delete products from the catalogue so that unavailable items no longer appear on the site.
+- As an admin, I can sort products in the admin panel by various criteria (e.g., name, price,) so that I can manage the catalogue more efficiently.
+- As an admin, I can view all messages submitted by users in a structured format so that I can respond to inquiries efficiently.
+- As an admin, I can process payments using Stripe so that I can handle transactions securely and reliably.
 
 ### User
 
-- I can administer my User account and contact the site if need be
-  - As a User I can Register with the site so I can Login
-  - As a User I can Login to the site so I can use and administer my account
-  - As a User I can order a product so that I can get it delivered to me
-  - As a User I can add a product to the Bag and administer the shopping bag
-  - As a User I can contact site admin for any site issues that I may have
-  - As a User I can write/edit/delete a review that I post
+- As a user, I can fill out a contact form on the website so that I can send inquiries or feedback to the company.
+- As a user, I can see a detailed breakdown of my order total, including discounts and shipping, so that I understand the final price I am paying.
+- As a user, I can receive an email confirmation after completing my order so that I know my transaction was successful.
+- As a user, I can view a summary of the products in my cart so that I can confirm my order is correct before checkout.
+- As a user, I can experience a clean and professional design so that I feel confident shopping on a high-quality website.
+- As a user, I can access a clear and well-organised navigation menu so that I can find the information or products I need without frustration.
+- As a user, I can access the website on my mobile device so that I can browse and shop seamlessly on the go.
+- As a user, I can see visual or textual feedback when interacting with elements (e.g., buttons or forms) so that I know my actions have been registered.
+- As a user with disabilities, I can use assistive technologies (e.g., screen readers) to navigate the site so that I can access the same features as any other user.
+- As a user, I can experience minimal load times on every page so that I don't lose interest or abandon the site.
+- As a user, I can access a secure checkout process so that I feel confident that my payment details are safe.
+
+### Returning Visitor Goals
+- As a returning user, I can securely save my payment details so that future purchases are faster and easier.
+- As a returning user, I can review my previous purchases so that I can reorder or track my past orders.
+- As a returning user, I can leave reviews for products I’ve purchased so that I can share feedback with other users.
 
 ### Landing page on desktop 
 
