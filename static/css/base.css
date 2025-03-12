@@ -5,9 +5,15 @@ html {
 body {
     background: no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 100%;
     color: rgb(82, 0, 0);
     font-family: 'Lato';
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 /* from Bulma */
@@ -96,6 +102,68 @@ a.category-badge > span.badge:hover {
     background: white;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
+}
+
+/*---------------------------------About page*/
+
+/* About Page Image Styles */
+
+.about-page .profile-image {
+    max-width: 300px;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.about-page .profile-image:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.about-page .caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6c757d; /* Subtle gray text */
+    font-style: italic;
+    text-align: center;
+}
+
+/*  Header Container Styles */
+
+.about-page .header-container {
+    margin-top: 120px;
+}
+
+/* Section Styles */
+
+/* Reset default browser styles for section */
+
+.about-page section {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add spacing specifically for sections if needed */
+
+.about-page .hero-section {
+    margin-bottom: 1rem; /* Space after hero section */
+    position: static; /* Override the global relative positioning */
+    height: auto; /* Allow content to dictate height */
+    overflow: visible; /* Remove hidden overflow */
+}
+
+/* Hero Journey Styles */
+
+.about-page .hero-journey {
+    margin-top: 3rem; /* Space before Our Story */
+    margin-bottom: 3rem; /* Optional space after Our Story */
+}
+
+/* Call-to-Action Styles */
+
+.about-page .call-to-action {
+    margin-top: 3rem; /* Space before Call to Action */
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -266,7 +334,62 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/*----------------------------------------Footer*/
 
+/* Ensures the footer background is black */
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    margin-top: 2rem;
+}
+
+footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .list-inline-item a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .list-inline-item a:hover {
+    text-decoration: underline;
+}
+
+footer .row h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+a.category-badge>span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -320,6 +443,10 @@ input[name='q']::placeholder {
     }
 
     #delivery-banner h4 {
+        font-size: .9rem;
+    }
+
+    footer{
         font-size: .9rem;
     }
 
