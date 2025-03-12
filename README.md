@@ -42,4 +42,88 @@ You can check out my Repository [here]()
   - As a User I can contact site admin for any site issues that I may have
   - As a User I can write/edit/delete a review that I post
 
+
+### Landing page on desktop 
+
+![Home Landing Page of site]()
+
+### Landing page on mobile
+
+![Home Landing page mobile]()
+
+## E-Commerce Business Model
+
+Naveena's Store operates on a B2C (Business-to-Consumer) model, offering high-quality, handmade scented candles and reed diffusers directly to our valued customers. Through our easy-to-navigate e-commerce platform, we ensure a seamless shopping experience, where individual consumers can explore, select, and purchase our products with convenience. Our focus is on providing exceptional products that enhance your home environment, all while maintaining a personal touch and commitment to customer satisfaction.
+
+## Marketing Strategies
+
+Search Engine Optimization (SEO)
+Optimize for Relevant Keywords: Focusing on keywords related to scented candles, reed diffusers, and natural home fragrance products. Use these keywords throughout your website and blog to improve your search engine rankings and visibility.
+
+Marketing is done on customer satisfaction where they would use word of mouth to spread the word about our products. At Fitness Fanatic a Facebook webpage was also setup to spread the word about our products that we offer [Facebook Page]()
+
+[Goto Top](#Table of contents)
+
+## Planning 
+
+## Entity Relationship Diagram
+
+![Naveena's Store ERD]()
+
+[Goto Top](#Table of contents)
+
+## Wireframes
+
+### About
+
+![About]()
+
+[Goto Top](#Table of contents)
+
+### Contact
+
+![Contact]()
+
+[Goto Top](#Table of contents)
+
+### Bag
+
+![bag]()
+
+[Goto Top](#Table of contents)
+
+### Checkout
+
+![Checkout]()
+
+[Goto Top](#Table of contents)
+
+### Home Page/ Landing Page
+
+![Home Page]()
+
+[Goto Top](#Table of contents)
+
+### Product new arrivals
+
+![Product new arrivals]()
+
+[Goto Top](#Table of contents)
+
+### Products
+
+![Products]()
+
+[Goto Top](#Table of contents)
+
+### User Profile
+
+![User Profile]()
+
+[Goto Top](#Table of contents)
+
+### Product Management for Admin
+
+![Product Management for Admin]()
+
 [Goto Top](#Table of contents)
