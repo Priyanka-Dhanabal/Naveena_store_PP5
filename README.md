@@ -20,7 +20,7 @@ You can check out my Repository [here]()
 
 
 
-# Project Research and Preparation
+## Project Research and Preparation
 
 For the development of this project, I adopted **Agile development** methodologies to ensure a flexible and iterative approach.
 
@@ -87,8 +87,6 @@ Optimize for Relevant Keywords: Focusing on keywords related to scented candles,
 Marketing is done on customer satisfaction where they would use word of mouth to spread the word about our products. At Fitness Fanatic a Facebook webpage was also setup to spread the word about our products that we offer [Facebook Page]()
 
 [Goto Top](#Table of contents)
-
-## Planning 
 
 ## Entity Relationship Diagram
 The entity relationship diagram for this project can be seen below.
@@ -189,6 +187,13 @@ Typography:
 
 [Goto Top](#Table of contents)
 
+
+## Features
+
+## Future-Features
+
+## Known Bugs
+
 ## Technologies Used
   - HTML
   - Python
@@ -204,7 +209,7 @@ Typography:
   - Bootstrap 4 used for frontend framework
   - favicon.io used to make favicon for the site
 
-#### dependencies 
+### dependencies 
 
 app | version
 --- | ---
@@ -223,33 +228,6 @@ sqlparse | 0.5.3
 stripe | 11.6.0
 
 [Goto Top](#Table of contents)
-
-## Deployment
-  This project was developed using GitPod. The web application is deployed on Heroku. All Static and media files are stored via Amazon AWS S3. The repository is hosted on GitHub.
-
-[Goto Top](#Table of contents)
-
-### Clone GitHub Repository
-
-  By Cloning a GitHub repository you can create a local copy of a GitHub remote repository.
-  Cloning is done via the following steps
-
-  - 1. Login to GitHub
-  - 2. Navigate to the main GitHub repository that you want to clone
-  - 3. Click on the green dropdown button Code
-  - 4. To clone the repository using HTTPS under HTTPS copy the link
-  - 5. Open command prompt
-  - 6. Change to the directory you want to create the repository in
-  - 7. Type git clone and paste the URL you copied in step 4.
-    ``` $ git clone https://github.com/your-username/your-repository```
-  - 8. Press enter. Your local copy of the repository will be created
-
-For this project GitPod IDE was used so I just had to create a workspace and connect to GitHub by choosing the repository.
-Once the workspace opened in GitPod 
-
-To install the dependencies from the command line in GitPod
-pip3 install -r requirements.txt
-
 
 ## Deployment
   This project was developed using GitPod. The web application is deployed on Heroku. All Static and media files are stored via Amazon AWS S3. The repository is hosted on GitHub.
