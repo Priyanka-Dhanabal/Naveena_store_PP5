@@ -429,3 +429,16 @@ From the AWS Management Console.
   - Back within S3 buckets create folder media
   - copy over existing media files to this folder
   - Under Manage Public Permisssions select Grant public read access to this object
+
+## Credits
+
+Being pregnant is not easy but I would like to thank Code Institute student care and the Tutoring team aswell as other students for their support throughout this course. I can not believe that the journey is come to an end. Being part of this course has made me achieve great height.
+
+I have completly followed throught the PP5 walk through project to build my current project. I would like to explore more and learn, become more confident in building e-commerce project. 
+
+** Thank you Code Institute
+
+[Goto Top](#Table of contents)
+
+
+
