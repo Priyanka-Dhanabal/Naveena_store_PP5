@@ -42,7 +42,6 @@ You can check out my Repository [here]()
   - As a User I can contact site admin for any site issues that I may have
   - As a User I can write/edit/delete a review that I post
 
-
 ### Landing page on desktop 
 
 ![Home Landing Page of site]()
@@ -67,6 +66,7 @@ Marketing is done on customer satisfaction where they would use word of mouth to
 ## Planning 
 
 ## Entity Relationship Diagram
+The entity relationship diagram for this project can be seen below.
 
 ![Naveena's Store ERD]()
 
@@ -125,5 +125,19 @@ Marketing is done on customer satisfaction where they would use word of mouth to
 ### Product Management for Admin
 
 ![Product Management for Admin]()
+
+[Goto Top](#Table of contents)
+
+### Design
+
+Color Palette: 
+-   The color scheme is kept simple by opting mainly for a combination of Black/marroon text set against the light backgrounds and White text against the dark backgrounds.  Throughout the site, the user will see light and calming, welcoming colors like this when hovering over certain sections as well as colorful buttons on each page.
+
+Color Scheme:
+- Text: #000 / rgb(82, 0, 0)
+- Body Background: Image taken from google images
+
+Typography:
+- Imported Lato from Google fonts user as the primary font, and Sans-Serif used as the secondary font.
 
 [Goto Top](#Table of contents)
