@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category, Review
 from django.db.models.functions import Lower
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 
 # Create your views here.
@@ -64,9 +64,15 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product).order_by('-created_at')
+    user_has_reviewed = Review.objects.filter(
+        product=product, user=request.user).exists(
+        ) if request.user.is_authenticated else False
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'user_has_reviewed': user_has_reviewed,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -152,6 +158,8 @@ def add_review(request, product_id):
     existing_review = Review.objects.filter(
         product=product, user=request.user
     ).first()
+    
+    # If a review exists, prevent a second review
     if existing_review:
         messages.error(request, "You have already reviewed this product.")
         return redirect("product_detail", product_id=product.id)
@@ -160,17 +168,22 @@ def add_review(request, product_id):
         form = ReviewForm(request.POST)
         if form.is_valid():
             try:
+                # Create the review object but do not save it yet
                 review = form.save(commit=False)
                 review.product = product
                 review.user = request.user
                 review.save()
+
+                # After saving, show a success message
                 messages.success(request, "Thank you for your review!")
                 return redirect("product_detail", product_id=product.id)
             except IntegrityError:
-                messages.error(
-                    request, "An error occurred while saving your review."
-                )
+                # If there's an integrity error, show an error message
+                messages.error(request, "An error occurred while saving your review. Please try again.")
                 return redirect("product_detail", product_id=product.id)
+        else:
+            messages.error(request, "There was an issue with your form submission. Please correct the errors below.")
+
     else:
         form = ReviewForm()
 
@@ -214,9 +227,11 @@ def edit_review(request, product_id, review_id):
 @login_required
 def delete_review(request, product_id, review_id):
     """Delete a specific review."""
-    review = get_object_or_404(
-        Review, pk=review_id, product_id=product_id, user=request.user
-    )
+    review = get_object_or_404(Review, pk=review_id, product_id=product_id)
+    
+    if review.user != request.user:  # Ensure only the owner can delete their review
+        messages.error(request, "You are not authorized to delete this review.")
+        return redirect('product_detail', product_id=product_id)
 
     if request.method == "POST":
         review.delete()
@@ -224,9 +239,7 @@ def delete_review(request, product_id, review_id):
         return redirect("product_detail", product_id=product_id)
 
     return render(
-        "products/confirm_delete_review.html",
-        {
-            "review": review,
-            "product": review.product,
-        },
-    )
+    request,
+    "products/confirm_delete_review.html",
+    {"review": review, "product": review.product}
+)

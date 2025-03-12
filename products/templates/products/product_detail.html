@@ -87,7 +87,66 @@
                 {% endwith %}
             </div>
         </div>
+        <!-- Review Section -->
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2">
+                <hr>
+                <h2 class="logo-font mb-4">Reviews</h2>
+                <hr>
+
+                <!-- Display Existing Reviews -->
+                {% if reviews %}
+                <ul class="list-unstyled">
+                    {% for review in reviews %}
+                    <li class="media mb-4 p-3 rounded">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">
+                                <strong>{{ review.user.username }}</strong>
+                                <small class="text-muted ml-2">rated {{ review.rating }} / 5</small>
+                            </h5>
+
+                            <p class="text-muted">Posted on: {{ review.created_at|date:"F j, Y" }}</p>
+
+                            {% for line in review.comment.splitlines %}
+                            {% if line %}
+                            <p>{{ line }}</p>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if review.user == request.user %}
+                            <div class="review-buttons mt-2">
+                                <a href="{% url 'edit_review' product.id review.id %}" class="btn btn-warning">Edit</a>
+                                <!-- Direct link to delete review confirmation page -->
+                                <a href="{% url 'delete_review' product.id review.id %}" class="btn btn-danger">Delete</a>
+                            </div>
+                            {% endif %}
+                            </div>
+                            </li>
+                            <hr>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-muted">No reviews yet. Be the first to write a review!</p>
+                {% endif %}
+
+                <!-- Button for Writing a Review -->
+                {% if request.user.is_authenticated %}
+                    {% if not user_has_reviewed %}
+                    <p class="text-muted mt-3">
+                        <a href="{% url 'add_review' product.id %}" class="btn btn-black rounded-0">Write a Review</a>
+                    </p>
+                    {% else %}
+                    <p class="text-muted mt-3">You have already written a review for this product.</p>
+                    {% endif %}
+                {% else %}
+                <p class="text-muted mt-3">
+                    <a href="{% url 'account_login' %}?next={{ request.path }}" class="btn btn-black rounded-0">Login to Write a Review</a>
+                </p>
+                {% endif %}
+            </div>
+        </div>       
     </div>
+
 {% endblock %}
 
 {% block postloadjs %}
