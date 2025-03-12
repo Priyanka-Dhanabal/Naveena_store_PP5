@@ -21,9 +21,21 @@ You can check out my Repository [here]()
 
 
 # Project Research and Preparation
+
+For the development of this project, I adopted **Agile development** methodologies to ensure a flexible and iterative approach.
+
+To manage and track the progress of user stories during the project, I created a Kanban Board board. The board was divided into four columns: **Epics**, **To Do**, **In Progress**, and **Done**.
+
+- Epics: This column contained overarching goals that grouped related user stories together.
+- To Do: At the start of each iteration, user stories to be completed were moved here.
+- In Progress: As work began on a user story, it was moved to this column.
+- Done: Completed user stories were moved to this column to indicate they were finished.
+
+This setup provided a clear and simple way to track the status of tasks throughout the project, ensuring that progress was organised and transparent.
+
 ## Naveena's Store User Stories
 
-## EPICS
+#### EPICS
 
 ### Admin
 
@@ -80,6 +92,28 @@ Marketing is done on customer satisfaction where they would use word of mouth to
 
 ## Entity Relationship Diagram
 The entity relationship diagram for this project can be seen below.
+
+1. The profiles_userprofile model has a one-to-one relationship with the auth_user model, as each user can have only one profile.
+
+2. The products_product model has a one-to-many (Foreign Key) relationship with the products_category model, as each product belongs to one category, but a category can have many products.
+
+3. The products_review model has:
+   - A one-to-many (Foreign Key) relationship with the auth_user model, as one user can post many reviews.
+   - A one-to-many (Foreign Key) relationship with the products_product model, as one product can have many reviews.
+
+4. The account_emailaddress model has a one-to-one relationship with the auth_user model, as each user can have one primary email address.
+
+5. The account_emailconfirmation model has a one-to-many (Foreign Key) relationship with the account_emailaddress model, as one email address can have multiple confirmations.
+
+6. The checkout_order model has a one-to-many (Foreign Key) relationship with the profiles_userprofile model, as one user profile can have many orders.
+
+7. The checkout_orderlineitem model has:
+   - A one-to-many (Foreign Key) relationship with the checkout_order model, as one order can have many line items.
+   - A one-to-many (Foreign Key) relationship with the products_product model, as many line items can represent one product.
+
+8. The contact_contactmessage model has a one-to-many (Foreign Key) relationship with the auth_user model, as one user can send many contact messages.
+
+Below is the Entity Relationship Diagram (ERD) for the Maison Lavaux project, which visualises the relationships between the various models in the database.
 
 ![Naveena's Store ERD]()
 
