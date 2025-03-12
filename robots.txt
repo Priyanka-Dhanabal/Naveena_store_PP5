@@ -1,4 +1,9 @@
+# General rules for all crawlers
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /bag/
+Disallow: /profile/
 
-sitemap:
+# Sitemap reference
+sitemap: https://naveenas-store-a7c4968621d6.herokuapp.com/sitemap.xml

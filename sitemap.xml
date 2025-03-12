@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/accounts/signup/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/accounts/login/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/bag/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?category=scented_candles</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?category=reed_diffusers</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?category=new_arrivals</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?category=deals</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/about/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/contact/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/accounts/password/reset/</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?sort=rating&amp;direction=desc</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://naveenas-store-a7c4968621d6.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
