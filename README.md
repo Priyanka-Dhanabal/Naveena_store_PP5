@@ -203,3 +203,23 @@ Typography:
   - Balsamiq used for wireframing
   - Bootstrap 4 used for frontend framework
   - favicon.io used to make favicon for the site
+
+#### dependencies 
+
+app | version
+--- | ---
+django-storages | 1.14.5
+gunicorn | 23.0.0
+jmespath | 1.0.1
+oauthlib | 3.2.2
+pillow | 10.3.0
+psycopg2 | 2.9.10
+PyJWT | 2.10.1
+python3-openid | 3.2.0
+pytz | 2025.1
+requests-oauthlib | 2.0.0
+s3transfer | 0.11.4
+sqlparse | 0.5.3
+stripe | 11.6.0
+
+[Goto Top](#Table of contents)
