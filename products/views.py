@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Review
 from django.db.models.functions import Lower
 from .forms import ProductForm
 
@@ -141,3 +141,92 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_review(request, product_id):
+    """Add a new review for a product."""
+    product = get_object_or_404(Product, pk=product_id)
+
+    # Check if the user has already reviewed this product
+    existing_review = Review.objects.filter(
+        product=product, user=request.user
+    ).first()
+    if existing_review:
+        messages.error(request, "You have already reviewed this product.")
+        return redirect("product_detail", product_id=product.id)
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            try:
+                review = form.save(commit=False)
+                review.product = product
+                review.user = request.user
+                review.save()
+                messages.success(request, "Thank you for your review!")
+                return redirect("product_detail", product_id=product.id)
+            except IntegrityError:
+                messages.error(
+                    request, "An error occurred while saving your review."
+                )
+                return redirect("product_detail", product_id=product.id)
+    else:
+        form = ReviewForm()
+
+    context = {
+        "form": form,
+        "product": product,
+    }
+
+    return render(request, "products/add_review.html", context)
+
+
+@login_required
+def edit_review(request, product_id, review_id):
+    """
+    Edit an existing review for a specific product by the logged-in user.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(
+        Review, pk=review_id, product=product, user=request.user
+    )
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, "Your review has been updated successfully!"
+            )
+            return redirect("product_detail", product_id=product.id)
+    else:
+        form = ReviewForm(instance=review)
+
+    context = {
+        "form": form,
+        "product": product,
+        "review": review,
+    }
+    return render(request, "products/edit_review.html", context)
+
+
+@login_required
+def delete_review(request, product_id, review_id):
+    """Delete a specific review."""
+    review = get_object_or_404(
+        Review, pk=review_id, product_id=product_id, user=request.user
+    )
+
+    if request.method == "POST":
+        review.delete()
+        messages.success(request, "Your review has been deleted.")
+        return redirect("product_detail", product_id=product_id)
+
+    return render(
+        "products/confirm_delete_review.html",
+        {
+            "review": review,
+            "product": review.product,
+        },
+    )
