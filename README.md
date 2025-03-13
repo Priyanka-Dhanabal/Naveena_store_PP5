@@ -330,7 +330,100 @@ The product review functionality is an integral part of the application, enablin
 
 The Boutique Ado project did not include a review system, which limited customer engagement and product transparency. Without reviews or dynamic ratings, users were unable to provide feedback or view others' opinions. The addition of the product review feature in this project addresses these shortcomings, creating a more interactive and user-friendly shopping experience.
 
+#### Backend Features
 
+1. Add to Bag Functionality
+   - Users can add products to their shopping bag, with options to select quantity and size (if applicable).
+   - Stock availability is validated to ensure users cannot add more than the available quantity.
+
+2. Adjust Bag Functionality
+   - Allows users to update the quantity of items in the bag.
+   - Validates stock availability during adjustments to prevent exceeding the available stock.
+   - Dynamically updates the bag contents and session data.
+
+3. Remove from Bag Functionality
+   - Provides the ability to remove items from the shopping bag.
+   - Handles both size-specific items and general products.
+   - Returns appropriate responses for success or failure.
+
+4. Session-Based Bag Storage
+   - Stores the shopping bag in the user's session, ensuring persistence across pages.
+   - Handles size-specific quantities within the session data structure.
+
+5. Error Handling
+   - Displays error messages if users attempt to add or adjust quantities exceeding the available stock.
+   - Uses the `messages` framework for clear feedback on user actions (e.g., updates, removals, or errors).
+
+#### Frontend Features
+
+1. Responsive Design
+   - Fully responsive layout optimized for both mobile and desktop users.
+   - Mobile view displays individual product details and totals, while the desktop view uses a table format for better readability.
+
+2. Product Details
+   - Displays product images, names, sizes (if applicable), prices, quantities, and subtotals in an organized manner.
+   - Subtotals and total costs are dynamically calculated and displayed.
+
+3. Interactive Quantity Adjustment
+   - Users can increment or decrement product quantities directly in the bag.
+   - Real-time validation and updates ensure accurate totals.
+
+4. Empty Bag Handling
+   - If the shopping bag is empty, a message is displayed to the user.
+   - Includes a "Keep Shopping" button to redirect users back to the product catalog.
+
+5. Checkout Integration
+   - Clearly displays bag totals and provides checkout buttons for easy navigation to the checkout process.
+
+6. Reusable Templates
+   - Modular templates for product details, totals, and checkout buttons allow for consistent styling and easier maintenance.
+
+7. User Feedback
+   - Success and error messages inform users of updates, stock limitations, and removals, improving the overall user experience.
+
+8. Back to Top Button
+   - A floating "Back to Top" button improves navigation, especially for mobile users with long bag content.
+
+### Checkout Page / Checkout Success 
+
+![Checkout Success]()
+
+#### Backend Features
+
+1. Checkout form validation
+   - Validates all form fields, including full name, email, address, and payment details.
+   - Ensures data is correctly formatted and required fields are filled.
+
+2. Session-based bag integration
+   - Retrieves bag contents from the session to process orders seamlessly.
+   - Validates that the bag is not empty before proceeding with the checkout.
+
+3. Stripe payment integration
+   - Uses Stripe's PaymentIntent to securely process payments.
+   - Creates a PaymentIntent during checkout and uses client and server-side validation to ensure successful transactions.
+   - Handles payment errors with clear feedback for the user.
+
+4. Order and line item management
+   - Creates an order model to store all relevant customer, product, and payment details.
+   - Automatically generates unique order numbers using UUID.
+   - Saves each item in the bag as an OrderLineItem linked to the parent order.
+
+5. Stripe webhook handling
+   - Listens for payment success or failure events from Stripe.
+   - Processes orders via webhook events to ensure reliability, even if the user disconnects after payment.
+
+    ![Stripe Webhook]()
+
+6. User profile integration
+   - Authenticated users can save delivery information to their profile for faster future checkouts.
+   - Updates user profile information if "Save Info" is selected during checkout.
+
+7. Error handling
+   - Displays clear error messages for issues such as:
+     - Invalid payment details.
+     - Missing required fields.
+     - Product availability issues.
+   - Uses Django's messages framework for real-time user feedback.
 
 ## Future-Features
 
