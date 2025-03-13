@@ -148,59 +148,7 @@ Below is the Entity Relationship Diagram (ERD) for the Maison Lavaux project, wh
 
 All wireframes for the website were designed using the Balsamiq Desktop Application. These wireframes served as the foundation for planning the website's layout and user experience across different devices.
 
-### About
-
-![About]()
-
-[Goto Top](#Table of contents)
-
-### Contact
-
-![Contact]()
-
-[Goto Top](#Table of contents)
-
-### Bag
-
-![bag]()
-
-[Goto Top](#Table of contents)
-
-### Checkout
-
-![Checkout]()
-
-[Goto Top](#Table of contents)
-
-### Home Page/ Landing Page
-
-![Home Page]()
-
-[Goto Top](#Table of contents)
-
-### Product new arrivals
-
-![Product new arrivals]()
-
-[Goto Top](#Table of contents)
-
-### Products
-
-![Products]()
-
-[Goto Top](#Table of contents)
-
-### User Profile
-
-![User Profile]()
-
-[Goto Top](#Table of contents)
-
-### Product Management for Admin
-
-![Product Management for Admin]()
-
-[Goto Top](#Table of contents)
+![Naveena's Store general wirefram](readme_images/Products_wireframe.png)
 
 [Back to Table of Contents](#table-of-contents)
 
