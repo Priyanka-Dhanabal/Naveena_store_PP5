@@ -242,6 +242,95 @@ For my project, the base.html template serves as the foundation for the overall 
 
 These features ensure a consistent user experience and allow for easy customisation of content across different pages, improving the maintainability and scalability of the project.
 
+### Home Page
+
+The homepage of Naveena's Store is thoughtfully designed to provide an engaging and seamless user experience while showcasing our collection. Below are the standout features:
+
+#### Products page
+
+### Product Details Page
+- Displays detailed product information, including:
+  - Name
+  - Price
+  - Category
+  - Description
+  - Size
+  - Rating
+  - Product Review
+
+![Dynamic Product Information]()
+
+#### Image Handling
+
+- Displays the product image if available.
+- Provides a fallback "no image available" placeholder for missing images.
+- Allows users to view the full-size image by clicking on it.
+- Uses `alt` attributes to provide descriptive text for images, improving accessibility for screen readers and enhancing the user experience for visually impaired users.
+
+#### Add to Bag Functionality
+- Users can select the desired quantity using:
+  - Increment and decrement buttons.
+  - Direct input (supports quantities between 1 and 99).
+- Ensures a smooth shopping experience by redirecting users back to the product page after adding to the bag.
+
+#### Superuser Capabilities
+- Superusers have access to additional controls, such as:
+  - Edit button to update product details.
+  - Delete button with a modal confirmation to prevent accidental actions. This feature addresses a limitation in the Boutique Ado project, which lacked a confirmation step for deletions.
+
+#### Product Review
+
+The product review functionality is an integral part of the application, enabling users to provide feedback on products, rate their quality, and share their experiences with other potential buyers. Below is an explanation of how the feature works and why it is a significant improvement over the Boutique Ado project.
+
+  ![Published Review]()
+
+##### How the Product Review Feature Works
+
+1. Dynamic Rating Update
+   - The product's average rating dynamically updates whenever a new review is added or edited. This ensures that the displayed rating always reflects the latest user feedback.
+
+2. Adding a Review
+   - Authenticated users can submit a review for a product by filling in a form that includes a star rating and a comment.
+   - The system checks if the user has already reviewed the product. If a review exists, they are notified that only one review per user is allowed.
+  ![Adding a Review]()
+
+3. Editing a Review
+   - Users can edit their existing reviews. The form pre-fills with the user's current review details, allowing for easy updates, and any changes are saved back to the database.
+
+4. Deleting a Review
+   - Users can delete their reviews if they no longer wish to share their feedback. The review is permanently removed from the database upon confirmation.
+
+5. Authentication Requirement
+   - Only logged-in users can add, edit, or delete reviews. Unauthenticated users are prompted to log in, with their current page preserved as the redirect URL for a seamless experience.
+
+6. Visibility on Product Pages
+   - All reviews for a product are displayed on its detail page, showing:
+     - Star rating
+     - Review text
+     - Date of posting
+     - Reviewer's username
+
+7. Review Management by Superusers
+   - While reviews are primarily user-driven, superusers retain full administrative control over product-related data, ensuring data integrity and quality.
+
+
+##### Why This Feature is Useful
+
+1. Encourages Customer Engagement
+   - The review feature provides a platform for users to share their opinions, fostering a sense of community and encouraging trust among customers.
+
+2. Improves Product Transparency
+   - With dynamic ratings and visible reviews, customers can make informed purchasing decisions based on real feedback from others.
+
+3. Prevents Spam or Redundant Reviews
+   - By restricting one review per user per product, the system avoids clutter and ensures that feedback remains meaningful and relevant.
+
+4. Facilitates Easy Review Management
+   - The ability to edit and delete reviews gives users full control over their feedback, reducing frustration and enhancing user satisfaction.
+
+The Boutique Ado project did not include a review system, which limited customer engagement and product transparency. Without reviews or dynamic ratings, users were unable to provide feedback or view others' opinions. The addition of the product review feature in this project addresses these shortcomings, creating a more interactive and user-friendly shopping experience.
+
+
 
 ## Future-Features
 
