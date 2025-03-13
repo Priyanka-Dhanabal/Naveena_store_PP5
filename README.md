@@ -425,9 +425,224 @@ The Boutique Ado project did not include a review system, which limited customer
      - Product availability issues.
    - Uses Django's messages framework for real-time user feedback.
 
+#### Frontend Features
+
+1. Responsive design
+   - Checkout page is fully responsive, ensuring usability across all devices.
+
+2. Order summary display
+   - Provides a detailed summary of the user's bag contents, including:
+     - Product name, size, and quantity.
+     - Subtotals, delivery cost, and grand total.
+
+3. Dynamic payment form
+   - Implements Stripe's Card Element for secure and user-friendly card input.
+   - Displays real-time validation errors within the payment form.
+
+4. Loading overlay
+   - A loading animation appears while processing payments, enhancing the user experience.
+
+5. Confirmation page
+   - Displays a detailed confirmation page after successful checkout, including:
+     - Order number and date.
+     - Billing and delivery details.
+     - List of ordered items with quantities and subtotals.
+   - Provides clear navigation options to return to the product catalog.
+  
+    ![Order Confirmation]()
+
+1. Save information option
+   - Allows logged-in users to save delivery details to their profile for future use.
+   - Offers non-authenticated users the option to sign up or log in to enable this feature.
+
+2. Reusable templates
+   - Modular templates for the form, order summary, and confirmation page ensure consistency and easy maintenance.
+
+3. Interactive adjustments
+   - Users can navigate back to the bag page to adjust quantities or remove items before finalizing the order.
+
+#### Order Confirmation Email
+
+- The checkout system includes an automatic confirmation email feature that provides customers with detailed information about their order.
+- Upon successful payment, the system generates and sends a personalized email to the customer using the email address provided during checkout.
+
+![Automatical Email Confirmation]()
+
+- The email includes key order details such as:
+  - Order number
+  - Order date
+  - Total cost
+  - Delivery address
+  - Contact information
+- The email reassures the customer that their order has been successfully processed.
+- It offers clear instructions for reaching out with any questions or concerns.
+- By delivering a professional and personalized confirmation email, the feature:
+  - Enhances customer satisfaction
+  - Builds trust in the brand
+  - Provides an immediate record of the transaction
+
+### Profile Page
+
+The profile app provides users with a personalized area to manage their default delivery information, view their order history, and update personal details like name and email. This app ensures a streamlined and user-friendly experience for managing account information and past transactions.
+
+![My Profile]()
+
+#### Backend Features
+
+1. User Profile Model
+   - Stores default delivery details such as:
+     - Phone number
+     - Address lines
+     - Town or city
+     - County
+     - Postcode
+     - Country
+   - Links each profile to a User instance using a one-to-one relationship.
+   - Automatically creates or updates the profile when a user is created using Django signals.
+
+2. Order History Retrieval
+   - Associates user profiles with their past orders, enabling users to view a detailed order history.
+   - Provides detailed information about each order, including order number, date, items, and total cost.
+
+3. Forms for User and Profile Updates
+   - UserProfileForm for updating default delivery information with:
+     - Custom placeholders and classes for consistency.
+     - Focus on user-friendly design with a clean interface.
+   - UserUpdateForm for updating personal details such as first name, last name, and email.
+
+4. View Functions
+   - profile: Displays the user's profile page, allowing updates to delivery information and personal details.
+   - order_history: Provides detailed information about past orders, with a message confirming that the order has already been processed.
+
+#### Frontend Features
+
+1. Profile Page
+   - Displays the user's personal details and default delivery information in a responsive, user-friendly layout.
+   - Includes separate sections for:
+     - Personal Information
+     - Default Delivery Information
+   - Features a single form for updating all information, submitted via a POST request.
+
+2. Order History Table
+   - Displays a list of the user's past orders in a table format with columns for:
+     - Order number (clickable link for more details)
+     - Order date (displayed using natural language)
+     - Order items (including product name, size, and quantity)
+     - Grand total
+   - Responsive design ensures readability on all device sizes.
+
+3. Order History Details
+   - Provides a detailed breakdown of individual orders, including:
+     - List of items ordered
+     - Delivery address
+     - Total costs, including delivery charges
+     - Timestamp of the order date
+   - Reuses the checkout success page template for consistency.
+
+4. Form Design
+   - All forms use the Crispy Forms library for a consistent and responsive design.
+   - Custom placeholders and autofocus improve usability and guide users during input.
+
+5. Error and Success Messaging
+   - Displays clear feedback when forms are submitted:
+     - Success messages confirm updates were saved successfully.
+     - Error messages highlight validation issues or missing required fields.
+
+### Add / Edit / Products Page
+
+This project includes product management functionality that enables authorized users to efficiently add, edit, and delete products directly through the frontend interface.
+
+![Add Product]()
+
+#### Add Product Functionality
+
+The application includes a dedicated form and view for adding products:
+
+- GET Request: The `add_product` view renders the `add_product.html` template with an empty `ProductForm` for entering product details.
+- POST Request: When the form is submitted, the data is validated. If valid, the new product is saved to the database, and the user is redirected to the product detail page. If invalid, error messages guide the user to correct the issues.
+
+The `add_product.html` template includes CSRF protection and uses Django's templating language for consistent rendering and security.
+
+#### Edit Product Functionality
+
+Editing existing products is handled by a similar process:
+
+- GET Request: The `edit_product` view retrieves the product by its ID and pre-populates the `ProductForm` with the current data. The form is displayed in the `edit_product.html` template for user modifications.
+- POST Request: On submission, the data is validated. If valid, the updates are saved, and the user is redirected to the product detail page. If invalid, error messages are displayed to assist the user.
+
+The `edit_product.html` template is designed to mirror the add product page while displaying existing data for convenience.
+
+![Edit Product]()
+
+#### Delete Product Functionality
+
+This functionality directly deletes the product without asking for any confirmation. I have to implemented a safe way of deletion.
+
+#### Access Control
+
+All product management views include safeguards to ensure only authorized users have access:
+
+- The `@login_required` decorator restricts access to authenticated users.
+- Additional checks confirm that only superusers can add, edit, or delete products.
+
+These measures ensure secure and reliable product management, protecting the integrity of the catalog.
+
+### Toast Messaging
+
+Toast messages have been implemented throughout the project to provide feedback to users on various actions and processes. These messages appear dynamically to inform users of the success, error, warning, or informational status of their interactions. For example, toast messages are used when products are successfully added to the shopping bag, when users log in or sign up, and to notify them of any errors or confirmations in the checkout process.
+
+The toast notifications are included in the project through the `includes/toasts` folder, using the `toast_error.html`, `toast_success.html`, `toast_warning.html`, and `toast_info.html` templates. These messages are displayed in a user-friendly format, improving the overall user experience by offering instant feedback without interrupting their flow on the page.
+
+![Toast Message]()
+
+Each toast message is contextually relevant, ensuring that users understand the result of their actions, such as whether an operation was successful or if there was an error that needs addressing. The notifications are designed to be responsive, providing a consistent experience across all devices.
+
+### About Us Page
+
+The About Us page shares the story of Maison Lavaux and its founder, Antoine Lambert. It highlights his journey from Lavaux's vineyards to becoming a master perfumer in Paris, overcoming challenges and creating a brand known for its craftsmanship and sophistication.
+
+### Contact Page
+
+The Contact Page allows users to reach out to Maison Lavaux for inquiries, support, or feedback, integrating seamlessly with the Contact app. This app includes both frontend and backend functionalities to manage user messages efficiently. By enabling clear communication, the Contact Page enhances customer support and ensures messages are tracked and addressed promptly, contributing to a seamless user experience.
+
+![Contact Us]()
+
+#### Key Features
+
+- User-friendly form that allows users to submit their name, email, subject, and message.
+- Pre-filled fields for registered users to simplify the process.
+- Database integration to store submitted messages for tracking and follow-up.
+- Admin notification via email for each new message to ensure timely responses.
+
+  ![Contact Message Email Notification]()
+
+- Acknowledgment for users with a confirmation message and estimated response time.
+
+#### Admin Features
+
+- Admin panel management for viewing and resolving contact messages.
+- Filters for resolved and replied statuses to streamline message handling.
+- Search functionality to locate messages by name, email, subject, or content.
+
+
 ## Future-Features
 
+To enhance the platform's functionality and user experience, the following features are planned for future development:
+
+- Order Fulfillment Notifications: Automatically notify customers via email or SMS when their orders are fulfilled, improving communication and customer satisfaction. 
+- Stock Management: Implement features to display stock available, handle low stock alerts, automated stock replenishment notifications, and better tracking of inventory levels for concurrent orders. 
+- Wishlist Functionality: Allow users to save items to a wishlist for future purchase, encouraging customer retention and repeat visits. 
+- Multi-Currency Support: Enable users to view product prices and complete purchases in their preferred currency, broadening the site's global appeal. 
+- Enhanced Review System: Allow users to upload images with their reviews, offering more detailed feedback and enriching the shopping experience for future buyers.   
+- Order Tracking System: Provide customers with real-time tracking of their orders, including shipment progress and expected delivery dates.  
+
 ## Known Bugs
+
+- The home page background image to not displayed when the apllication is deployed to Heroku. I tried to change the image url, checked the AWS S3, contacted the tutor support team but unfortunetly I am unable to fix the issue.
+
+- While I submit the contact form, I am receiving error message, only while I try to submit in deployed version of my website. This works on my local environment. I am not sure if this has something to do with webhook. I tried trouble shooting using platforms such as chatgpt and perplexcity and other student from my batch also tred to help but I was not able to resolve it.
+
+- I am not completly satisfied with the outcome of my website since I wanted to implement more features due to time contraint. But I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
 
 ## Technologies Used
   - HTML
@@ -648,6 +863,10 @@ From the AWS Management Console.
 Being pregnant is not easy but I would like to thank Code Institute student care and the Tutoring team aswell as other students for their support throughout this course. I can not believe that the journey is come to an end. Being part of this course has made me achieve great height.
 
 I have completly followed throught the PP5 walk through project to build my current project. I would like to explore more and learn, become more confident in building e-commerce project. 
+
+I am not completly satisfied with the outcome of my website since I wanted to implement more features, but I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
+
+
 
 ** Thank you Code Institute
 
