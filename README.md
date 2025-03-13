@@ -37,7 +37,9 @@ This setup provided a clear and simple way to track the status of tasks througho
 
 #### EPICS
 
-### Admin
+User stories are short, simple descriptions of a feature or functionality told from the perspective of the end user. They help ensure the development process remains user-focused, aligning each task with specific user needs and goals. Below are the user stories I created for my project:
+
+### Admin and Developer Goals
 
 - As an admin, I can assign products to specific categories so that users can find them more easily during browsing.
 - As an admin, I can upload, update, or delete product images so that products are visually appealing and well-represented.
@@ -48,7 +50,7 @@ This setup provided a clear and simple way to track the status of tasks througho
 - As an admin, I can view all messages submitted by users in a structured format so that I can respond to inquiries efficiently.
 - As an admin, I can process payments using Stripe so that I can handle transactions securely and reliably.
 
-### User
+### First-Time Visitor Goals
 
 - As a user, I can fill out a contact form on the website so that I can send inquiries or feedback to the company.
 - As a user, I can see a detailed breakdown of my order total, including discounts and shipping, so that I understand the final price I am paying.
@@ -119,6 +121,8 @@ Below is the Entity Relationship Diagram (ERD) for the Maison Lavaux project, wh
 
 ## Wireframes
 
+All wireframes for the website were designed using the Balsamiq Desktop Application. These wireframes served as the foundation for planning the website's layout and user experience across different devices.
+
 ### About
 
 ![About]()
@@ -187,8 +191,57 @@ Typography:
 
 [Goto Top](#Table of contents)
 
+### Kanban Board
+
+To manage and track the progress of user stories during the project, I created a Kanban Board board. The board was divided into four columns: Epics, To Do, In Progress, and Done.
+
+Epics: This column contained overarching goals that grouped related user stories together.
+To Do: At the start of each iteration, user stories to be completed were moved here.
+In Progress: As work began on a user story, it was moved to this column.
+Done: Completed user stories were moved to this column to indicate they were finished.
+This setup provided a clear and simple way to track the status of tasks throughout the project, ensuring that progress was organised and transparent.
 
 ## Features
+
+### Base Template file
+
+For my project, the base.html template serves as the foundation for the overall structure and layout of the website. By centralising common elements such as the header, footer, and navigation in a single file, it ensures consistency across all pages and simplifies maintenance. This approach allows individual pages to focus on their unique content while inheriting the shared layout and functionality from the base template. From the base.html template, the following features are included on every page within the project:
+
+#### Meta Tags
+- Essential meta tags, including character encoding, viewport settings for responsiveness, and a default meta description that can be customised on individual pages.
+
+#### CSS and JavaScript Includes
+- Core CSS includes such as Bootstrap, Google Fonts, and custom styles from `base.css`.
+- JavaScript libraries such as jQuery, Popper.js, Bootstrap JS, and Stripe for payment integration.
+- Additional, page-specific CSS and JavaScript can be added via block tags (`corecss`, `extra_css`, `corejs`, `extra_js`).
+
+#### Navigation Bar
+- A fixed-top navbar with search functionality, user account options (login, profile, logout), and a shopping cart icon displaying the number of items in the cart.
+- Dynamic greeting for logged-in users with their username or a "My Account" label for guests.
+  ![Nav Bar]()
+  
+#### Footer with Social Media and Newsletter Signup
+- The header includes the website logo, main navigation, and a delivery banner for promotions.
+- The footer contains links to information pages, social media profiles, and a newsletter subscription form.
+
+  ![Footer]()
+
+- External links include the rel="noopener noreferrer" attribute for the following reasons:
+  - Security: Prevents security risks like tabnabbing by disabling access to the window.opener object.
+  - Performance: Improves browser performance by not retaining references to the original tab.
+  - Privacy: Stops the browser from sending the referring URL to the destination website.
+
+#### Dynamic Content Blocks
+- Custom content areas such as `meta`, `page_header`, and `content` are made flexible through the use of `{% block %}` tags, allowing pages to easily modify or extend these areas.
+
+#### Toast Notifications
+- Displays dynamic notifications (success, error, warning, info) based on messages in the request context.
+
+#### Dynamic Year Display
+- The current year is dynamically displayed in the footer using JavaScript, ensuring the copyright information remains up-to-date.
+
+These features ensure a consistent user experience and allow for easy customisation of content across different pages, improving the maintainability and scalability of the project.
+
 
 ## Future-Features
 
