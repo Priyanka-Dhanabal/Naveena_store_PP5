@@ -18,7 +18,34 @@ You can check out my Repository [here](https://github.com/Priyanka-Dhanabal/Nave
 
 ## Table of contents
 
+1. [Project Research and Preparation](#project-research-and-preparation)
+   1.1. [Naveena's Store User Stories](#naveenas-store-user-stories)  
+   1.2. [EPICS](#epics)  
+   1.3. [Admin and Developer Goals](#admin-and-developer-goals)  
+   1.4. [First-Time Visitor Goals](#first-time-visitor-goals)  
+   1.5. [Returning Visitor Goals](#returning-visitor-goals)  
+   1.6. [Landing Page on Desktop](#landing-page-on-desktop)  
+   1.7. [Landing Page on Mobile](#landing-page-on-mobile)  
+   1.8. [E-Commerce Business Model](#e-commerce-business-model)  
+   1.9. [Marketing Strategies](#marketing-strategies)  
+   1.10. [Entity Relationship Diagram](#entity-relationship-diagram)  
+   1.11. [Wireframes](#wireframes)
 
+2. [Features](#features)
+
+3. [Future Features](#future-features)
+
+4. [Known Bugs](#known-bugs)
+
+5. [Technologies Used](#technologies-used)
+   5.1. [Dependencies](#dependencies)
+
+6. [Deployment](#deployment)
+   6.1. [Clone GitHub Repository](#clone-github-repository)  
+   6.2. [Deployment on Heroku](#deployment-on-heroku)  
+   6.3. [Amazon AWS S3](#amazon-aws-s3)
+
+7. [Credits](#credits)
 
 ## Project Research and Preparation
 
@@ -33,9 +60,9 @@ To manage and track the progress of user stories during the project, I created a
 
 This setup provided a clear and simple way to track the status of tasks throughout the project, ensuring that progress was organised and transparent.
 
-## Naveena's Store User Stories
+### Naveena's Store User Stories
 
-#### EPICS
+### EPICS
 
 User stories are short, simple descriptions of a feature or functionality told from the perspective of the end user. They help ensure the development process remains user-focused, aligning each task with specific user needs and goals. Below are the user stories I created for my project:
 
@@ -77,20 +104,18 @@ User stories are short, simple descriptions of a feature or functionality told f
 
 ![Home Landing page mobile](readme_images/landing_page_m.png)
 
-## E-Commerce Business Model
+### E-Commerce Business Model
 
 Naveena's Store operates on a B2C (Business-to-Consumer) model, offering high-quality, handmade scented candles and reed diffusers directly to our valued customers. Through our easy-to-navigate e-commerce platform, we ensure a seamless shopping experience, where individual consumers can explore, select, and purchase our products with convenience. Our focus is on providing exceptional products that enhance your home environment, all while maintaining a personal touch and commitment to customer satisfaction.
 
-## Marketing Strategies
+### Marketing Strategies
 
 Search Engine Optimization (SEO)
 Optimize for Relevant Keywords: Focusing on keywords related to scented candles, reed diffusers, and natural home fragrance products. Use these keywords throughout your website and blog to improve your search engine rankings and visibility.
 
 Marketing is done on customer satisfaction where they would use word of mouth to spread the word about our products. At Fitness Fanatic a Facebook webpage was also setup to spread the word about our products that we offer [Facebook Page](readme_images/Facebook.png)
 
-[Goto Top](#Table of contents)
-
-## Entity Relationship Diagram
+### Entity Relationship Diagram
 The entity relationship diagram for this project can be seen below.
 
 1. The profiles_userprofile model has a one-to-one relationship with the auth_user model, as each user can have only one profile.
@@ -117,9 +142,9 @@ Below is the Entity Relationship Diagram (ERD) for the Maison Lavaux project, wh
 
 ![Naveena's Store ERD](readme_images/ERD.png)
 
-[Goto Top](#Table of contents)
+[Back to Table of Contents](#table-of-contents)
 
-## Wireframes
+### Wireframes
 
 All wireframes for the website were designed using the Balsamiq Desktop Application. These wireframes served as the foundation for planning the website's layout and user experience across different devices.
 
@@ -176,6 +201,8 @@ All wireframes for the website were designed using the Balsamiq Desktop Applicat
 ![Product Management for Admin]()
 
 [Goto Top](#Table of contents)
+
+[Back to Table of Contents](#table-of-contents)
 
 ### Design
 
@@ -631,6 +658,8 @@ The Contact Page allows users to reach out to Maison Lavaux for inquiries, suppo
 - Filters for resolved and replied statuses to streamline message handling.
 - Search functionality to locate messages by name, email, subject, or content.
 
+[Back to Table of Contents](#table-of-contents)
+
 ## Future-Features
 
 To enhance the platform's functionality and user experience, the following features are planned for future development:
@@ -641,6 +670,8 @@ To enhance the platform's functionality and user experience, the following featu
 - Multi-Currency Support: Enable users to view product prices and complete purchases in their preferred currency, broadening the site's global appeal. 
 - Enhanced Review System: Allow users to upload images with their reviews, offering more detailed feedback and enriching the shopping experience for future buyers.   
 - Order Tracking System: Provide customers with real-time tracking of their orders, including shipment progress and expected delivery dates.  
+
+[Back to Table of Contents](#table-of-contents)
 
 ## Known Bugs
 
@@ -658,6 +689,8 @@ Receiving this error when I submit my form.
 
 
 - I am not completly satisfied with the outcome of my website since I wanted to implement more features due to time contraint. But I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
+
+[Back to Table of Contents](#table-of-contents)
 
 ## Technologies Used
   - HTML
@@ -692,7 +725,9 @@ s3transfer | 0.11.4
 sqlparse | 0.5.3
 stripe | 11.6.0
 
-[Goto Top](#Table of contents)
+[Back to Table of Contents](#table-of-contents)
+
+
 
 ## Deployment
   This project was developed using GitPod. The web application is deployed on Heroku. All Static and media files are stored via Amazon AWS S3. The repository is hosted on GitHub.
@@ -873,6 +908,8 @@ From the AWS Management Console.
   - copy over existing media files to this folder
   - Under Manage Public Permisssions select Grant public read access to this object
 
+[Back to Table of Contents](#table-of-contents)
+
 ## Credits
 
 Being pregnant is not easy but I would like to thank Code Institute student care and the Tutoring team aswell as other students for their support throughout this course. I can not believe that the journey is come to an end. Being part of this course has made me achieve great height.
@@ -885,7 +922,7 @@ I am not completly satisfied with the outcome of my website since I wanted to im
 
 ** Thank you Code Institute
 
-[Goto Top](#Table of contents)
+[Back to Table of Contents](#table-of-contents)
 
 
 
