@@ -2,7 +2,7 @@
 
 # Naveena's Store
 
-![Naveena'sStore_ResponsiveImg]()
+![Naveena'sStore_ResponsiveImg](readme_images/responsive.png)
 
 ## Description
 
@@ -12,9 +12,9 @@ This project was developed as part of Code Institute's Full Stack Software Devel
 
 #### - By Priyanka Dhanabal
 
-The live version of the project can be viewed [here]()
+The live version of the project can be viewed [here](https://naveenas-store-a7c4968621d6.herokuapp.com/)
 
-You can check out my Repository [here]()
+You can check out my Repository [here](https://github.com/Priyanka-Dhanabal/Naveena_store_PP5)
 
 ## Table of contents
 
@@ -71,11 +71,11 @@ User stories are short, simple descriptions of a feature or functionality told f
 
 ### Landing page on desktop 
 
-![Home Landing Page of site]()
+![Home Landing Page of site](readme_images/landing_page_w.png)
 
 ### Landing page on mobile
 
-![Home Landing page mobile]()
+![Home Landing page mobile](readme_images/landing_page_m.png)
 
 ## E-Commerce Business Model
 
@@ -86,7 +86,7 @@ Naveena's Store operates on a B2C (Business-to-Consumer) model, offering high-qu
 Search Engine Optimization (SEO)
 Optimize for Relevant Keywords: Focusing on keywords related to scented candles, reed diffusers, and natural home fragrance products. Use these keywords throughout your website and blog to improve your search engine rankings and visibility.
 
-Marketing is done on customer satisfaction where they would use word of mouth to spread the word about our products. At Fitness Fanatic a Facebook webpage was also setup to spread the word about our products that we offer [Facebook Page]()
+Marketing is done on customer satisfaction where they would use word of mouth to spread the word about our products. At Fitness Fanatic a Facebook webpage was also setup to spread the word about our products that we offer [Facebook Page](readme_images/Facebook.png)
 
 [Goto Top](#Table of contents)
 
@@ -115,7 +115,7 @@ The entity relationship diagram for this project can be seen below.
 
 Below is the Entity Relationship Diagram (ERD) for the Maison Lavaux project, which visualises the relationships between the various models in the database.
 
-![Naveena's Store ERD]()
+![Naveena's Store ERD](readme_images/ERD.png)
 
 [Goto Top](#Table of contents)
 
@@ -218,13 +218,13 @@ For my project, the base.html template serves as the foundation for the overall 
 #### Navigation Bar
 - A fixed-top navbar with search functionality, user account options (login, profile, logout), and a shopping cart icon displaying the number of items in the cart.
 - Dynamic greeting for logged-in users with their username or a "My Account" label for guests.
-  ![Nav Bar]()
+  ![Nav Bar](readme_images/nav.png)
   
 #### Footer with Social Media and Newsletter Signup
 - The header includes the website logo, main navigation, and a delivery banner for promotions.
 - The footer contains links to information pages, social media profiles, and a newsletter subscription form.
 
-  ![Footer]()
+  ![Footer](readme_images/footer.png)
 
 - External links include the rel="noopener noreferrer" attribute for the following reasons:
   - Security: Prevents security risks like tabnabbing by disabling access to the window.opener object.
@@ -248,6 +248,8 @@ The homepage of Naveena's Store is thoughtfully designed to provide an engaging 
 
 #### Products page
 
+![Product](readme_images/Product_information.png)
+
 ### Product Details Page
 - Displays detailed product information, including:
   - Name
@@ -258,7 +260,7 @@ The homepage of Naveena's Store is thoughtfully designed to provide an engaging 
   - Rating
   - Product Review
 
-![Dynamic Product Information]()
+![Dynamic Product Information](readme_images/product_detail.png)
 
 #### Image Handling
 
@@ -282,7 +284,7 @@ The homepage of Naveena's Store is thoughtfully designed to provide an engaging 
 
 The product review functionality is an integral part of the application, enabling users to provide feedback on products, rate their quality, and share their experiences with other potential buyers. Below is an explanation of how the feature works and why it is a significant improvement over the Boutique Ado project.
 
-  ![Published Review]()
+![Published Review](readme_images/review.png)
 
 ##### How the Product Review Feature Works
 
@@ -292,13 +294,16 @@ The product review functionality is an integral part of the application, enablin
 2. Adding a Review
    - Authenticated users can submit a review for a product by filling in a form that includes a star rating and a comment.
    - The system checks if the user has already reviewed the product. If a review exists, they are notified that only one review per user is allowed.
-  ![Adding a Review]()
+
+![Adding a Review](readme_images/add_review.png)
 
 3. Editing a Review
    - Users can edit their existing reviews. The form pre-fills with the user's current review details, allowing for easy updates, and any changes are saved back to the database.
 
 4. Deleting a Review
    - Users can delete their reviews if they no longer wish to share their feedback. The review is permanently removed from the database upon confirmation.
+
+![deleting a Review](readme_images/delete_review.png)
 
 5. Authentication Requirement
    - Only logged-in users can add, edit, or delete reviews. Unauthenticated users are prompted to log in, with their current page preserved as the redirect URL for a seamless experience.
@@ -384,9 +389,11 @@ The Boutique Ado project did not include a review system, which limited customer
 8. Back to Top Button
    - A floating "Back to Top" button improves navigation, especially for mobile users with long bag content.
 
+![Shopping Bag](readme_images/Shopping_bag.png)
+
 ### Checkout Page / Checkout Success 
 
-![Checkout Success]()
+![Checkout Success](readme_images/Checkout.png)
 
 #### Backend Features
 
@@ -411,8 +418,6 @@ The Boutique Ado project did not include a review system, which limited customer
 5. Stripe webhook handling
    - Listens for payment success or failure events from Stripe.
    - Processes orders via webhook events to ensure reliability, even if the user disconnects after payment.
-
-    ![Stripe Webhook]()
 
 6. User profile integration
    - Authenticated users can save delivery information to their profile for faster future checkouts.
@@ -449,7 +454,7 @@ The Boutique Ado project did not include a review system, which limited customer
      - List of ordered items with quantities and subtotals.
    - Provides clear navigation options to return to the product catalog.
   
-    ![Order Confirmation]()
+    ![Order Confirmation](readme_images/order_confirm.png)
 
 1. Save information option
    - Allows logged-in users to save delivery details to their profile for future use.
@@ -465,8 +470,6 @@ The Boutique Ado project did not include a review system, which limited customer
 
 - The checkout system includes an automatic confirmation email feature that provides customers with detailed information about their order.
 - Upon successful payment, the system generates and sends a personalized email to the customer using the email address provided during checkout.
-
-![Automatical Email Confirmation]()
 
 - The email includes key order details such as:
   - Order number
@@ -485,7 +488,7 @@ The Boutique Ado project did not include a review system, which limited customer
 
 The profile app provides users with a personalized area to manage their default delivery information, view their order history, and update personal details like name and email. This app ensures a streamlined and user-friendly experience for managing account information and past transactions.
 
-![My Profile]()
+![My Profile](readme_images/profile.png)
 
 #### Backend Features
 
@@ -552,7 +555,7 @@ The profile app provides users with a personalized area to manage their default 
 
 This project includes product management functionality that enables authorized users to efficiently add, edit, and delete products directly through the frontend interface.
 
-![Add Product]()
+![Add Product](readme_images/add_product.png)
 
 #### Add Product Functionality
 
@@ -572,7 +575,7 @@ Editing existing products is handled by a similar process:
 
 The `edit_product.html` template is designed to mirror the add product page while displaying existing data for convenience.
 
-![Edit Product]()
+![Edit Product](readme_images/edit_product.png)
 
 #### Delete Product Functionality
 
@@ -593,7 +596,9 @@ Toast messages have been implemented throughout the project to provide feedback 
 
 The toast notifications are included in the project through the `includes/toasts` folder, using the `toast_error.html`, `toast_success.html`, `toast_warning.html`, and `toast_info.html` templates. These messages are displayed in a user-friendly format, improving the overall user experience by offering instant feedback without interrupting their flow on the page.
 
-![Toast Message]()
+![Toast Success message](readme_images/toast_success.png)
+
+![Toast error message](readme_images/contact_error.png)
 
 Each toast message is contextually relevant, ensuring that users understand the result of their actions, such as whether an operation was successful or if there was an error that needs addressing. The notifications are designed to be responsive, providing a consistent experience across all devices.
 
@@ -601,11 +606,13 @@ Each toast message is contextually relevant, ensuring that users understand the 
 
 The About Us page shares the story of Maison Lavaux and its founder, Antoine Lambert. It highlights his journey from Lavaux's vineyards to becoming a master perfumer in Paris, overcoming challenges and creating a brand known for its craftsmanship and sophistication.
 
+![About Us](readme_images/about.png)
+
 ### Contact Page
 
 The Contact Page allows users to reach out to Maison Lavaux for inquiries, support, or feedback, integrating seamlessly with the Contact app. This app includes both frontend and backend functionalities to manage user messages efficiently. By enabling clear communication, the Contact Page enhances customer support and ensures messages are tracked and addressed promptly, contributing to a seamless user experience.
 
-![Contact Us]()
+![Contact Us](readme_images/contact.png)
 
 #### Key Features
 
@@ -614,7 +621,7 @@ The Contact Page allows users to reach out to Maison Lavaux for inquiries, suppo
 - Database integration to store submitted messages for tracking and follow-up.
 - Admin notification via email for each new message to ensure timely responses.
 
-  ![Contact Message Email Notification]()
+  ![Contact Message Email Notification](readme_images/contact_email.png)
 
 - Acknowledgment for users with a confirmation message and estimated response time.
 
@@ -623,7 +630,6 @@ The Contact Page allows users to reach out to Maison Lavaux for inquiries, suppo
 - Admin panel management for viewing and resolving contact messages.
 - Filters for resolved and replied statuses to streamline message handling.
 - Search functionality to locate messages by name, email, subject, or content.
-
 
 ## Future-Features
 
@@ -638,9 +644,18 @@ To enhance the platform's functionality and user experience, the following featu
 
 ## Known Bugs
 
-- The home page background image to not displayed when the apllication is deployed to Heroku. I tried to change the image url, checked the AWS S3, contacted the tutor support team but unfortunetly I am unable to fix the issue.
+- The home page background image to not displayed when the apllication is deployed to Heroku, also the image in about us page is not displayed. I tried to change the image url, checked the AWS S3, contacted the tutor support team but unfortunetly I am unable to fix the issue.
 
 - While I submit the contact form, I am receiving error message, only while I try to submit in deployed version of my website. This works on my local environment. I am not sure if this has something to do with webhook. I tried trouble shooting using platforms such as chatgpt and perplexcity and other student from my batch also tred to help but I was not able to resolve it.
+
+Receiving confirmation when submiting on my local environment.
+
+![Contact Message Email Notification](readme_images/contact_email.png)
+
+Receiving this error when I submit my form.
+
+![Contact error message](readme_images/contact_error.png)
+
 
 - I am not completly satisfied with the outcome of my website since I wanted to implement more features due to time contraint. But I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
 
@@ -862,7 +877,7 @@ From the AWS Management Console.
 
 Being pregnant is not easy but I would like to thank Code Institute student care and the Tutoring team aswell as other students for their support throughout this course. I can not believe that the journey is come to an end. Being part of this course has made me achieve great height.
 
-I have completly followed throught the PP5 walk through project to build my current project. I would like to explore more and learn, become more confident in building e-commerce project. 
+I have completly followed throught the PP5 walk through project to build my current project. I would like to explore more and learn, become more confident in building e-commerce project. I refered almost 20 student's project and readme file to build my own. 
 
 I am not completly satisfied with the outcome of my website since I wanted to implement more features, but I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
 
