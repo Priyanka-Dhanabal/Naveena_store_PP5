@@ -28,8 +28,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    """Admin interface for managing Review objects."""
-
     list_display = (
         "product",
         "user",
@@ -38,13 +36,13 @@ class ReviewAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-    list_filter = ("product", "rating")  # Filter by product and rating
+    list_filter = ("product", "rating")
     search_fields = (
         "product__name",
         "user__username",
         "comment",
-    )  # Search by product name, username, and comment
-    ordering = ("-created_at",)  # Order by the newest reviews first
+    )
+    ordering = ("-created_at",)
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

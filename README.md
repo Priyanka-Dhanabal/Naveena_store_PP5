@@ -635,6 +635,7 @@ Receiving this error when I submit my form.
 
 ![Contact error message](readme_images/contact_error.png)
 
+- Product Detail page is not rendering, receiving 500 server error on deployed version and not on local environment.
 
 - I am not completly satisfied with the outcome of my website since I wanted to implement more features due to time contraint. But I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
 
