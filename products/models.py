@@ -30,13 +30,14 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
-    def clean(self):
-        """Ensure that discount_price is less than price."""
-        super().clean()
-        if self.discount_price and self.discount_price >= self.price:
-            raise ValidationError(
-                "Discount price must be less than the original price."
-            )
+
+    # def clean(self):
+    #     """Ensure that discount_price is less than price."""
+    #     super().clean()
+    #     if self.discount_price and self.discount_price >= self.price:
+    #         raise ValidationError(
+    #             "Discount price must be less than the original price."
+    #         )
 
     def update_rating(self):
         """Calculate and update the average rating based on associated reviews."""
