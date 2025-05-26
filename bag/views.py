@@ -85,24 +85,40 @@ def remove_from_bag(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
 
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
+        size = request.POST.get('product_size', None)
+        if not size:
+            size = None
         bag = request.session.get('bag', {})
 
         if size:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
-                bag.pop(item_id)
-                messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
+            if (item_id in bag and 
+                isinstance(bag[item_id], dict) and 
+                'items_by_size' in bag[item_id] and 
+                size in bag[item_id]['items_by_size']):
+
+                del bag[item_id]['items_by_size'][size]
+                
+                # Remove item if no sizes left
+                if not bag[item_id]['items_by_size']:
+                    del bag[item_id]
+
+                messages.success(request, f'Removed {product.name} (Size {size.upper()}) from your bag.')
+            else:
+                messages.error(request, f"{product.name} (Size {size.upper()}) not found in your bag.")
         else:
-            bag.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your bag')
+            # Handle products without size
+            if item_id in bag and isinstance(bag[item_id], int):
+                del bag[item_id]
+                messages.success(request, f'Removed {product.name} from your bag.')
+            else:
+                messages.error(request, f"{product.name} not found in your bag.")
 
         request.session['bag'] = bag
-        return HttpResponse(status=200)
+
+        return redirect('view_bag')
     
     except Exception as e:
 
         messages.error(request, f'Error removing item: {e}')
+
         return HttpResponse(status=500)
