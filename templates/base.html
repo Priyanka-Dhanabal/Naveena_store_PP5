@@ -13,8 +13,7 @@
   <!-- SEO -->
   <meta name="author" content="Priyanka Dhanabal">
   <meta name="description" content="Naveena's Store, premium, handmade scented candles and reed diffusers">
-  <meta name="keywords"
-    content="handmade scented candles, premium scented candles, 
+  <meta name="keywords" content="handmade scented candles, premium scented candles, 
     reed diffusers, eco-friendly candles, natural scented candles,
     high-quality scented candles, fragrance candles, 
     home fragrance products, luxury scented candles, 
@@ -31,6 +30,7 @@
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   {% endblock %}
 
   {% block extra_css %}
@@ -180,7 +180,7 @@
     <div class="container">
       <div class="row">
         <!-- Information Section -->
-        <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
           <h5 class="text-decoration-underline"><strong>Information</strong></h5>
           <ul class="list-unstyled">
             <li><a href="{% url 'about' %}" class="nav-link text-white">About Us</a></li>
@@ -188,9 +188,8 @@
           </ul>
         </div>
 
-
         <!-- Social Media Section -->
-        <div class="col-12 col-md-6 text-center mb-3 mb-md-0">
+        <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
           <h5 class="text-decoration-underline"><strong>Follow Us</strong></h5>
           <ul class="list-inline">
             <li class="list-inline-item"><a href="https://facebook.com" target="_blank" class="text-white"
@@ -203,6 +202,56 @@
                 rel="noopener noreferrer"><i class="fab fa-linkedin fa-lg"></i></a></li>
           </ul>
         </div>
+
+        <!-- Newsletter Signup -->
+
+        <div class="col-12 col-md-4">
+          <h5 class="text-decoration-underline"><strong>Subscribe!</strong></h5>
+          <p>Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
+          <!-- Mailchimp signup form here -->
+          <div id="mc_embed_shell">
+            
+            <div id="mc_embed_signup">
+              <form
+                action="https://herokuapp.us15.list-manage.com/subscribe/post?u=49ee1766b8d0582310cb617ed&amp;id=fc75eb81d5&amp;f_id=00c0c2e1f0"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                target="_blank">
+                <div id="mc_embed_signup_scroll">
+                  <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span
+                        class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email"
+                      id="mce-EMAIL" required="" value=""></div>
+                  <div id="mce-responses" class="clear foot">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                  </div>
+                  <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                    /* real people should not fill this in and expect good things - do not remove this or risk form bot
+                    signups */
+                    <input type="text" name="b_49ee1766b8d0582310cb617ed_fc75eb81d5" tabindex="-1" value="">
+                  </div>
+                  <div class="optionalParent">
+                    <div class="clear foot">
+                      <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn-orange shop-now-button"
+                       value="Subscribe">
+                      <p style="margin: 0px auto;"><a href="http://eepurl.com/jfGEqE"
+                          title="Mailchimp - email marketing made easy and fun"><span
+                            style="display: inline-block; background-color: transparent; border-radius: 4px;"><img
+                              class="refferal_badge"
+                              src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                              alt="Intuit Mailchimp"
+                              style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div> 
+
+          </div>
+
+        </div>
+
+
       </div>
     </div>
     <div class="row mt-3">
@@ -214,6 +263,31 @@
     <script>
       // Dynamically set the current year
       document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Mailchimp signup form here -->
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+      (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'ADDRESS';
+        ftypes[3] = 'address';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+        fnames[5] = 'BIRTHDAY';
+        ftypes[5] = 'birthday';
+        fnames[6] = 'COMPANY';
+        ftypes[6] = 'text';
+      }(jQuery));
+      var $mcj = jQuery.noConflict(true);
     </script>
 
   </footer>
