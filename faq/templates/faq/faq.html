@@ -27,9 +27,9 @@
             {% if request.user.is_superuser %}
                 <br>
                 <div class="row">
-                    <div class="col text-center">
+                    <div class="col text-center category-badge text-decoration-none">
                         <a href="{% url 'add_faq' %}"
-                           class="bg-container text-black text-uppercase py-3 text-decoration-none">Add a FAQ</a>
+                           class="p-2 mt-2 badge badge-white rounded-0 border border-dark btn btn-outline-dark">Add a FAQ</a>
                     </div>
                 </div>
                 <br>

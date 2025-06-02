@@ -382,7 +382,7 @@ footer p {
     background: #fff;
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
-    width: 600px;
+    width: 100%;
   }
 
 .border-black {
@@ -396,6 +396,47 @@ footer p {
 a.category-badge>span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
+}
+
+/*----------------------------------------Faq*/
+
+.faq-dd {
+    list-style-type: none !important;
+}
+
+.faq-font-bg {
+    text-decoration: none !important;
+    font-size: 1em;
+    color: #3b3b3b;
+}
+
+.faq-btn {
+    border-width: 0 !important;
+    background: none;
+    text-align: left;
+}
+
+.bg-faq {
+    border-radius: 10px;
+    border: 1px solid #fff7e7dc;
+    background: #fff7e7;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.faq-border {
+    border-radius: 10px !important;
+    border: 1px solid #fff7e7dc !important;
+    color: #886829;
+}
+
+
+.bg-admin {
+    border-radius: 10px;
+    border: 1px solid #ffc24975;
+    background: #fff7e7;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 /* -------------------------------- Media Queries */
