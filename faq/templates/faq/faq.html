@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ</title>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    {% for item in faq_items %}
+        <div>
+            <h3>{{ item.question }}</h3>
+            <p>{{ item.answer }}</p>
+        </div>
+    {% empty %}
+        <p>No FAQ items found.</p>
+    {% endfor %}
+</body>
+</html>

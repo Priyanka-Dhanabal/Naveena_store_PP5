@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-priyankadha-naveenastor-15knum3ch2c.ws-eu119.gitpod.io',
+ALLOWED_HOSTS = ['8000-priyankadha-naveenastor-15knum3ch2c.ws-eu120.gitpod.io',
                 '127.0.0.1',
                 'localhost',
                 'naveenas-store-a7c4968621d6.herokuapp.com',
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'profiles',
     'contact',
     'about',
+    'faq',
     
     # Other
     'crispy_forms',
