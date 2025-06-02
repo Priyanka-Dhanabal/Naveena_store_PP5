@@ -1,17 +1,80 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>FAQ</title>
-</head>
-<body>
-    <h1>Frequently Asked Questions</h1>
-    {% for item in faq_items %}
-        <div>
-            <h3>{{ item.question }}</h3>
-            <p>{{ item.answer }}</p>
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
         </div>
-    {% empty %}
-        <p>No FAQ items found.</p>
-    {% endfor %}
-</body>
-</html>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay">
+    </div>
+    <div class="container container-height">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <h1>
+                        Frequently asked Questions
+                    </h1>
+                    <hr class="w-50 mb-1">
+                </div>
+            </div>
+            <br>
+            {% if request.user.is_superuser %}
+                <br>
+                <div class="row">
+                    <div class="col text-center">
+                        <a href="{% url 'add_faq' %}"
+                           class="bg-container text-black text-uppercase py-3 text-decoration-none">Add a FAQ</a>
+                    </div>
+                </div>
+                <br>
+            {% endif %}
+            <br>
+            {% for faq_item in faq_items %}
+                <div class="row">
+                    <div class="col-sm-1 col-md-2 col-xl-3">
+                    </div>
+                    <div class="bg-faq col-12 col-sm-10 col-md-8 col-xl-6">
+                        <div class="accordion" id="faqAccordion{{ forloop.counter }}">
+                            <div class="bg-book">
+                                <div class="card-header faq-border" id="heading{{ forloop.counter }}">
+                                    <h2 class="mb-0">
+                                        <button class="faq-dd faq-font-bg faq-btn col-12"
+                                                type="button"
+                                                data-toggle="collapse"
+                                                data-target="#collapse{{ forloop.counter }}"
+                                                aria-expanded="false"
+                                                aria-controls="collapse{{ forloop.counter }}">
+                                            <i class="fa-solid fa-caret-down"></i> {{ faq_item.question }}
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapse{{ forloop.counter }}"
+                                     class="collapse"
+                                     aria-labelledby="heading{{ forloop.counter }}"
+                                     data-parent="#faqAccordion{{ forloop.counter }}">
+                                    <div class="card-body">
+                                        {{ faq_item.answer }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_faq' faq_item.id %}" class="btn btn-edit">Edit</a>
+                                <a class="btn btn-del" href="{% url 'delete_faq' faq_item.id %}">Delete</a>
+                            </small>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-1 col-md-2 col-xl-3">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
