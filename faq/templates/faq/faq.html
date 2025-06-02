@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-sm-1 col-md-2 col-xl-3">
                     </div>
-                    <div class="bg-faq col-12 col-sm-10 col-md-8 col-xl-6">
+                    <div class="bg-faq col-12 col-sm-10 col-md-8 col-xl-6 mb-3">
                         <div class="accordion" id="faqAccordion{{ forloop.counter }}">
                             <div class="bg-book">
                                 <div class="card-header faq-border" id="heading{{ forloop.counter }}">
@@ -66,8 +66,8 @@
                         </div>
                         {% if request.user.is_superuser %}
                             <small class="ml-3">
-                                <a href="{% url 'edit_faq' faq_item.id %}" class="btn btn-edit">Edit</a>
-                                <a class="btn btn-del" href="{% url 'delete_faq' faq_item.id %}">Delete</a>
+                                <a href="{% url 'edit_faq' faq_item.id %}">Edit</a> | 
+                                <a class="text-danger" href="{% url 'delete_faq' faq_item.id %}">Delete</a>
                             </small>
                         {% endif %}
                     </div>
