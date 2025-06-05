@@ -113,40 +113,40 @@ a.category-badge > span.badge:hover {
 
 /*---------------------------------Carosel*/
 
-    .carousel-item {
-      height: 50vh;
-      min-height: 500px;
-      background-size: cover;
-      background-position: center;
-      color: white;
-      position: relative;
-    }
+.carousel-item {
+    height: 50vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
 
-    .carousel-caption {
-      top: 20%;
-      z-index: 10;
-    }
+.carousel-caption {
+    top: 20%;
+    z-index: 10;
+}
 
-    .carousel-caption h5 {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #000;
-    }
+.carousel-caption h5 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+}
 
-    .carousel-caption p {
-      font-size: 1.25rem;
-      color: #000;
-    }
+.carousel-caption p {
+    font-size: 1.25rem;
+    color: #000;
+}
 
-    .btn-cta {
-      background-color: rgb(255, 110, 57);
-      color: #333;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
+.btn-cta {
+    background-color: rgb(255, 110, 57);
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
 /*---------------------------------About page*/
 
