@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: no-repeat center center fixed;
+   /* background: no-repeat center center fixed;*/
     background-size: cover;
     height: 100%;
     color: rgb(82, 0, 0);
@@ -55,9 +55,9 @@ main {
     color: white;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus{
+.btn-cta:hover,
+.btn-cta:active,
+.btn-cta:focus{
     background: rgb(255, 146, 106);
     color: rgb(0, 0, 0);
 }
@@ -103,6 +103,43 @@ a.category-badge > span.badge:hover {
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
+
+/*---------------------------------Carosel*/
+
+    .carousel-item {
+      height: 50vh;
+      min-height: 500px;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      position: relative;
+    }
+
+    .carousel-caption {
+      top: 20%;
+      z-index: 10;
+    }
+
+    .carousel-caption h5 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .carousel-caption p {
+      font-size: 1.25rem;
+      color: #000;
+    }
+
+    .btn-cta {
+      background-color: rgb(255, 110, 57);
+      color: #333;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
 /*---------------------------------About page*/
 
