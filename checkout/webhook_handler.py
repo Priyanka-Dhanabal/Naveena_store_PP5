@@ -18,7 +18,6 @@ class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
 
-
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         logger.info(f"Sending confirmation email for order {order.id}")
@@ -30,21 +29,18 @@ class StripeWH_Handler:
             body = render_to_string(
                 'checkout/confirmation_emails/confirmation_email_body.txt',
                 {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-            
             send_mail(
                 subject,
                 body,
                 settings.DEFAULT_FROM_EMAIL,
                 [cust_email]
-            )    
-
+            )
             print(f"Confirmation email sent to {cust_email}")
         except BadHeaderError:
             print("Invalid header found.")
         except Exception as e:
             print(f"Error sending email: {str(e)}")
         logger.info(f"Confirmation email sent to {cust_email}")
-
 
     def handle_event(self, event):
         """
@@ -90,8 +86,6 @@ class StripeWH_Handler:
                 profile.default_street_address2 = shipping_details.address.line2
                 profile.default_county = shipping_details.address.state
                 profile.save()
-
-
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -118,7 +112,8 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=f'Webhook received: {event["type"]} | '
+                        f'SUCCESS: Verified order already in database',
                 status=200)
         else:
             order = None
@@ -164,9 +159,10 @@ class StripeWH_Handler:
                     status=500)
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} | '
+                    f'SUCCESS: Created order in webhook',
             status=200)
-    
+
     def handle_payment_intent_payment_failed(self, event):
         """
         Handle the payment_intent.payment_failed webhook from Stripe

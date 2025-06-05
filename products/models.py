@@ -20,27 +20,21 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
+                                 blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
-
-    # def clean(self):
-    #     """Ensure that discount_price is less than price."""
-    #     super().clean()
-    #     if self.discount_price and self.discount_price >= self.price:
-    #         raise ValidationError(
-    #             "Discount price must be less than the original price."
-    #         )
-
     def update_rating(self):
-        """Calculate and update the average rating based on associated reviews."""
+        """Calculate and update the average rating based on
+        associated reviews."""
         reviews = self.reviews.all()
         if reviews.exists():
             self.rating = round(

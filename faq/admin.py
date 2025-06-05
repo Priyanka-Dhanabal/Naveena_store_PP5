@@ -10,5 +10,4 @@ class FaqAdmin(admin.ModelAdmin):
         'answer',
     )
 
-
 admin.site.register(Faq, FaqAdmin)

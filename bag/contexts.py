@@ -11,7 +11,8 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     for item_id, item_data in bag.items():
-        # If item_data is an integer, it means no size is associated, so it's just quantity
+        # If item_data is an integer, it means no size is associated,
+        # so it's just quantity
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
@@ -25,7 +26,8 @@ def bag_contents(request):
         else:
             # If item_data contains sizes, we need to handle sizes
             product = get_object_or_404(Product, pk=item_id)
-            # Safely get 'items_by_size', default to an empty dictionary if not found
+            # Safely get 'items_by_size', default to an empty
+            # dictionary if not found
             items_by_size = item_data.get('items_by_size', {})
 
             for size, quantity in items_by_size.items():
@@ -45,9 +47,9 @@ def bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = delivery + total
-    
+
     # Add all the necessary context variables
     context = {
         'bag_items': bag_items,

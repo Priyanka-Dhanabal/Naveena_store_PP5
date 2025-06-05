@@ -6,6 +6,7 @@ from .models import ContactMessage
 from .forms import ContactForm
 import os
 
+
 def contact_view(request):
     """
     Handles creation of contact submissions.
@@ -16,7 +17,9 @@ def contact_view(request):
 
     if not admin_email:
         print("Error: Admin email is not configured.")
-        messages.error(request, "Admin email is not configured. Please try again later.")
+        messages.error(
+            request,
+            "Admin email is not configured. Please try again later.")
         return redirect(reverse("home"))
 
     # Meta description for the contact page
@@ -35,7 +38,10 @@ def contact_view(request):
                 contact_message.save()
             except Exception as e:
                 print(f"Error saving contact message: {e}")
-                messages.error(request, "There was an issue saving your message. Please try again later.")
+                messages.error(
+                    request,
+                    "There was an issue saving your message."
+                    "Please try again later.")
                 return redirect(reverse("home"))
 
             name = form.cleaned_data["name"]
@@ -55,14 +61,18 @@ def contact_view(request):
                 )
             except Exception as e:
                 print(f"Error sending email to admin: {e}")
-                messages.error(request, "There was an issue sending the notification email. Please try again later.")
+                messages.error(
+                    request,
+                    "There was an issue sending the notification email."
+                    "Please try again later.")
                 return redirect(reverse("home"))
 
             # Send confirmation email to user (optional)
             try:
                 send_mail(
                     "Thank you for contacting us",
-                    "Thank you for reaching out to us. We have received your message and will get back to you shortly.",
+                    "Thank you for reaching out to us. We have received your "
+                    "message and will get back to you shortly.",
                     settings.DEFAULT_FROM_EMAIL,
                     [email],
                     fail_silently=False,
@@ -70,7 +80,10 @@ def contact_view(request):
             except Exception as e:
                 print(f"Error sending confirmation email: {e}")
                 # Log the error but do not block the flow
-                messages.info(request, "Thank you for contacting us. We’ve received your message.")
+                messages.info(
+                    request,
+                    "Thank you for contacting us."
+                    "We’ve received your message.")
 
             # Provide user feedback and redirect
             messages.success(
@@ -82,9 +95,14 @@ def contact_view(request):
         else:
             # Handle form errors
             print(f"Form errors: {form.errors}")  # For debugging purposes
-            messages.error(request, "There were errors in your form submission. Please correct them and try again.")
-            return render(request, "contact/contact.html", {"form": form, "meta_description": meta_description})
-
+            messages.error(
+                request,
+                "There were errors in your form submission."
+                "Please correct them and try again.")
+            return render(
+                request,
+                "contact/contact.html",
+                {"form": form, "meta_description": meta_description})
     else:
         # Pre-fill the form for authenticated users
         if request.user.is_authenticated:
