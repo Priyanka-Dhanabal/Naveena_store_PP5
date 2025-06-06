@@ -19,8 +19,6 @@ class ContactForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         if not email:
             raise forms.ValidationError("This field is required.")
-        # Optionally, add additional validation here for email format or domain
-
         return email
 
     def clean_message(self):

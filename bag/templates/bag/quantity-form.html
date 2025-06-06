@@ -31,8 +31,6 @@
     </div>
 </form>
 <a class="update-link text-primary"><small>Update</small></a>
-<!--<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-    data-product_size="{{ item.size|default_if_none:'' }}"><small>Remove</small></a>-->
 <form method="POST" action="{% url 'remove_from_bag' item.item_id %}" class="d-inline">
     {% csrf_token %}
     {% if item.size %}
