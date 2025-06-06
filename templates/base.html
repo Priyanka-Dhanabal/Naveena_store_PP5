@@ -138,7 +138,7 @@
       </nav>
     </div>
     <div id="delivery-banner" class="row text-center">
-      <div class="col bg-black text-white">
+      <div class="col text-white">
         <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
       </div>
     </div>
@@ -253,6 +253,15 @@
     <script>
       // Dynamically set the current year
       document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Change banner color automatically
+      const colors = ['#f8b195', '#f67280', '#c06c84', '#6c5b7b', '#355c7d'];
+      let index = 0;
+
+      setInterval(() => {
+        document.getElementById('delivery-banner').style.backgroundColor = colors[index];
+        index = (index + 1) % colors.length;
+      }, 2000); // Change every 2 seconds
     </script>
 
     <!-- Mailchimp signup form here -->
@@ -279,6 +288,8 @@
       }(jQuery));
       var $mcj = jQuery.noConflict(true);
     </script>
+
+
 
   </footer>
 
