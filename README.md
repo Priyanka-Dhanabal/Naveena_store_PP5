@@ -2,8 +2,6 @@
 
 # Naveena's Store
 
-![Naveena'sStore_ResponsiveImg](readme_images/responsive.png)
-
 ## Description
 
 Welcome to Naveena's Store, your one-stop destination for premium, handmade scented candles and reed diffusers. We specialize in creating products infused with natural essences, designed to enhance your home with delightful fragrances. Although we’re a new and growing brand in the candle and diffuser market, we are committed to offering high-quality, eco-friendly products that bring warmth, relaxation, and a touch of elegance to any space.
@@ -38,17 +36,19 @@ You can check out my Repository [here](https://github.com/Priyanka-Dhanabal/Nave
 
 4. [Manual Testing](#manual-testing)
 
-4. [Known Bugs](#known-bugs)
+5. [Known Bugs](#known-bugs)
 
-5. [Technologies Used](#technologies-used)
-   5.1. [Dependencies](#dependencies)
+6. [Technologies Used](#technologies-used)
 
-6. [Deployment](#deployment)
-   6.1. [Clone GitHub Repository](#clone-github-repository)  
-   6.2. [Deployment on Heroku](#deployment-on-heroku)  
-   6.3. [Amazon AWS S3](#amazon-aws-s3)
+   6.1. [Dependencies](#dependencies)
 
-7. [Credits](#credits)
+7. [Deployment](#deployment)
+
+   7.1. [Clone GitHub Repository](#clone-github-repository)  
+   7.2. [Deployment on Heroku](#deployment-on-heroku)  
+   7.3. [Amazon AWS S3](#amazon-aws-s3)
+
+8. [Credits](#credits)
 
 ## Project Research and Preparation
 
@@ -582,15 +582,35 @@ Each toast message is contextually relevant, ensuring that users understand the 
 
 ### About Us Page
 
-The About Us page shares the story of Maison Lavaux and its founder, Antoine Lambert. It highlights his journey from Lavaux's vineyards to becoming a master perfumer in Paris, overcoming challenges and creating a brand known for its craftsmanship and sophistication.
+The About Us page shares the story of Naveena's Store on how they had come with the idea.
 
 ![About Us](readme_images/about.png)
 
 ### Contact Page
 
-The Contact Page allows users to reach out to Maison Lavaux for inquiries, support, or feedback, integrating seamlessly with the Contact app. This app includes both frontend and backend functionalities to manage user messages efficiently. By enabling clear communication, the Contact Page enhances customer support and ensures messages are tracked and addressed promptly, contributing to a seamless user experience.
+The Contact Page allows users to reach out to Naveena's Store for inquiries, support, or feedback, integrating seamlessly with the Contact app. This app includes both frontend and backend functionalities to manage user messages efficiently. By enabling clear communication, the Contact Page enhances customer support and ensures messages are tracked and addressed promptly, contributing to a seamless user experience.
 
 ![Contact Us](readme_images/contact.png)
+
+### FAQ Page
+
+This FAQ page is a section on a website that lists common questions customers or visitors have — along with clear answers.
+It’s designed to help users find quick information without needing to contact support.
+
+![Faq](readme_images/faq.png)
+
+As A Admin, new Faq can be added, edited and deleted.
+
+![Admin Faq](readme_images/faq_admin.png)
+
+To add a Faq - Form
+
+![Add Faq](readme_images/add_faq.png)
+
+To edit or delete an exsisting Faq.
+
+![Edit/ Delete Faq](readme_images/edit_faq.png)
+
 
 #### Key Features
 
@@ -822,11 +842,22 @@ Status | **Create A Profile Page - User Logged In**
 | &check; | The profile success message is displayed when the user updates the profile form
 | &check; | As soon as a user has placed an order, the orer summary will show up on the profile page
 
+
+#### Validation
+
+LightHouse
+
+![LightHouse](readme_images/lighthouse.png)
+
+Used [CI Python Linter](https://pep8ci.herokuapp.com/) to validate if all the Python files follow the PEP8 style guide. - Pass
+
 [Back to Table of Contents](#table-of-contents)
 
 ## Known Bugs
 
 - The home page background image to not displayed when the apllication is deployed to Heroku, also the image in about us page is not displayed. I tried to change the image url, checked the AWS S3, contacted the tutor support team but unfortunetly I am unable to fix the issue.
+
+   - Alternatively I have implemeneted Carossel at the home page.
 
 - While I submit the contact form, I am receiving error message, only while I try to submit in deployed version of my website. This works on my local environment. I am not sure if this has something to do with webhook. I tried trouble shooting using platforms such as chatgpt and perplexcity and other student from my batch also tred to help but I was not able to resolve it.
 
@@ -838,7 +869,15 @@ Receiving this error when I submit my form.
 
 ![Contact error message](readme_images/contact_error.png)
 
+   - Removing the discount_price from the product model resolved this issue.
+
+   ![Contact error solved](readme_images/contact_error_solved.png)
+
 - Product Detail page is not rendering, receiving 500 server error on deployed version and not on local environment.
+
+   - Removing the discount_price from the product model resolved this issue.
+
+- When a Product has no size, in the shopping bag and the quantity goes below 0. I was unable to resolve this issue.
 
 - I am not completly satisfied with the outcome of my website since I wanted to implement more features due to time contraint. But I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
 
@@ -861,21 +900,27 @@ Receiving this error when I submit my form.
 
 ### dependencies 
 
-app | version
---- | ---
-django-storages | 1.14.5
-gunicorn | 23.0.0
-jmespath | 1.0.1
-oauthlib | 3.2.2
-pillow | 10.3.0
-psycopg2 | 2.9.10
-PyJWT | 2.10.1
-python3-openid | 3.2.0
-pytz | 2025.1
-requests-oauthlib | 2.0.0
-s3transfer | 0.11.4
-sqlparse | 0.5.3
-stripe | 11.6.0
+asgiref==3.8.1
+boto3==1.37.9
+botocore==1.37.9
+dj-database-url==0.5.0
+Django==3.2.25
+django-allauth==0.50.0
+django-countries==7.2.1
+django-crispy-forms==1.14.0
+django-storages==1.14.5
+gunicorn==23.0.0
+jmespath==1.0.1
+oauthlib==3.2.2
+pillow==10.3.0
+psycopg2==2.9.10
+PyJWT==2.10.1
+python3-openid==3.2.0
+pytz==2025.1
+requests-oauthlib==2.0.0
+s3transfer==0.11.4
+sqlparse==0.5.3
+stripe==11.6.0
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -925,7 +970,7 @@ This project uses Heroku for production and static and media files are stored vi
 
   - 1. Naviage to heroku.com and login and create new app for your project and set the region and click on create app.
   - 2. Connect Heroku app to github repository 
-  - 3. Configure variables on Heroku by navigating to settings and click on Revela Config Vars 
+  - 3. Configure variables on Heroku by navigating to settings and click on Reveal Config Vars 
 
 Variable | Key
 --- | ---
@@ -1069,8 +1114,6 @@ Being pregnant is not easy but I would like to thank Code Institute student care
 I have completly followed throught the PP5 walk through project to build my current project. I would like to explore more and learn, become more confident in building e-commerce project. I refered almost 20 student's project and readme file to build my own. 
 
 I am not completly satisfied with the outcome of my website since I wanted to implement more features, but I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
-
-
 
 ** Thank you Code Institute
 
