@@ -10,6 +10,10 @@ from profiles.models import UserProfile
 import json
 import time
 import logging
+from django.core.mail import send_mail, BadHeaderError
+
+logger = logging.getLogger(__name__)
+
 
 
 class StripeWH_Handler:
@@ -19,28 +23,25 @@ class StripeWH_Handler:
         self.request = request
 
     def _send_confirmation_email(self, order):
+
         """Send the user a confirmation email"""
-        logger.info(f"Sending confirmation email for order {order.id}")
+
+        cust_email = order.email
         try:
-            cust_email = order.email
             subject = render_to_string(
                 'checkout/confirmation_emails/confirmation_email_subject.txt',
-                {'order': order})
+                {'order': order}
+            )
             body = render_to_string(
                 'checkout/confirmation_emails/confirmation_email_body.txt',
-                {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-            send_mail(
-                subject,
-                body,
-                settings.DEFAULT_FROM_EMAIL,
-                [cust_email]
+                {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
             )
-            print(f"Confirmation email sent to {cust_email}")
+            send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
+            logger.info(f"Confirmation email sent to {cust_email}")
         except BadHeaderError:
-            print("Invalid header found.")
+            logger.error("Invalid header found while sending confirmation email.")
         except Exception as e:
-            print(f"Error sending email: {str(e)}")
-        logger.info(f"Confirmation email sent to {cust_email}")
+            logger.error(f"Error sending confirmation email to {cust_email}: {e}")
 
     def handle_event(self, event):
         """
