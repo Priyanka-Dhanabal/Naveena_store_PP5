@@ -877,6 +877,15 @@ Receiving this error when I submit my form.
 
    - Removing the discount_price from the product model resolved this issue.
 
+- When Purchase is made, There was not confirmation email sent to my mail Id.
+
+   - Thanks to the tutor support, i was able to identify the root cause:
+
+         - In webhook_handler file, handle_payment_intent_succeeded, changed to country__iexact=shipping_details.address.country from country__iexact=shipping_details.country. Also with other address related entry.
+         - Interchanging confirmation_email_body and confirmation_email_subject.
+
+   It was working before but some reason it did not work when i was testing before submitting. 
+
 - When a Product has no size, in the shopping bag and the quantity goes below 0. I was unable to resolve this issue.
 
 - I am not completly satisfied with the outcome of my website since I wanted to implement more features due to time contraint. But I am happy I was able to come this far and would like to invest more time in future. Being pregnant was not easy with all sickness that I have. I would definetly make more advanced e-commerce website having this project as the base.
